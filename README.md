@@ -147,6 +147,7 @@ ${PROJECT_ROOT}
    His credit card number is [MASKEDNUMBER].
 ```
 **📊 Results (100-sample evaluation)** 
+
    Model	Precision	Recall	F1
    HF merged (GPU)	0.92	0.90	0.91
    GGUF Q4_K_M (CPU)	0.89	0.87	0.88
