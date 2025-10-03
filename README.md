@@ -86,6 +86,28 @@ ${PROJECT_ROOT}
     -- compare_cli.py
     -- evaluate_100.sh
 ```
+## GPU vs CPU Models
+   This repository provides two ways to run the model:
+   
+   * *GPU (HF Transformers, merged model)*
+   
+     * Best performance (accuracy + speed).
+      
+     * Requires CUDA and enough VRAM.
+      
+     * Recommended for production use.
+   
+   * *CPU (Quantized GGUF via llama.cpp)*
+   
+     * Lower performance due to quantization + CPU-only execution.
+      
+     * Enables running the model in lightweight environments.
+      
+     * Used for the Hugging Face Space demo, which is CPU-only.
+   
+   ⚠️ The HF Space demo may feel much slower and slightly less accurate.
+   For original performance, run the GPU merged model locally instead.
+
 ## ⚡ Quick Start
 1. **Environment**
    ```plaintext
