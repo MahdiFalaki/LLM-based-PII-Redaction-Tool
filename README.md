@@ -168,7 +168,7 @@ ${PROJECT_ROOT}
    [FIRSTNAME] [LASTNAME] lives at [ADDRESS].  
    His credit card number is [MASKEDNUMBER].
 ```
-**📊 Results (100-sample evaluation)** 
+## 📊 Results (100-sample evaluation)** 
 
    Model	Precision	Recall	F1
    HF merged (GPU)	0.92	0.90	0.91
@@ -176,7 +176,7 @@ ${PROJECT_ROOT}
 
    Confusion matrices are printed in the terminal.
 
-**🛠 Post-Processing Rules**
+## 🛠 Post-Processing Rules
 
    * *Canonicalize tags* → unify casing/variants
 
@@ -202,7 +202,7 @@ ${PROJECT_ROOT}
    
    
 
-**🙏 Credits**
+## 🙏 Credits
 
 Dataset: ai4privacy/pii-masking-200k
 
@@ -211,7 +211,7 @@ Base model: mistralai/Mistral-7B-Instruct-v0.2
 Tools: Axolotl
 , llama.cpp
 
-**📜 License**
+## 📜 License
 
 MIT License.
 
