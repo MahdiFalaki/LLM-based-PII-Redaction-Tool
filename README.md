@@ -1,7 +1,7 @@
 # 🔒 Text Redaction with Mistral-7B
 
 This project fine-tunes [mistralai/Mistral-7B-Instruct-v0.2](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2) on the [ai4privacy/pii-masking-200k](https://huggingface.co/datasets/ai4privacy/pii-masking-200k) dataset to **redact sensitive information (PII)**.  
-It supports both **GPU inference (merged Hugging Face model)** and **CPU inference (quantized GGUF model via llama.cpp)**, with post-processing for consistent normalization of entity tags.
+It supports both **GPU inference (merged Hugging Face model)** and **CPU inference demo-only (quantized GGUF model via llama.cpp)**, with post-processing for consistent normalization of entity tags.
 
 ---
 
@@ -105,8 +105,8 @@ ${PROJECT_ROOT}
       
      * Used for the Hugging Face Space demo, which is CPU-only.
    
-   ⚠️ The HF Space demo may feel much slower and slightly less accurate.
-   For original performance, run the GPU merged model locally instead.
+   ⚠️ The HF Space demo is much slower and less accurate.
+   For original performance, run the GPU merged model locally instead. The CPU model is for the demo-only.
 
 ## ⚡ Quick Start
 1. **Environment**
