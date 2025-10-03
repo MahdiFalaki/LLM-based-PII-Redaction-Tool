@@ -1,6 +1,6 @@
-# 🔒 PII Masking with Mistral-7B
+# 🔒 Redaction tool with Mistral-7B
 
-This project fine-tunes **Mistral-7B-Instruct-v0.2** on the [ai4privacy/pii-masking-200k](https://huggingface.co/datasets/ai4privacy/pii-masking-200k) dataset to **mask personally identifiable information (PII)**.  
+This project fine-tunes [mistralai/Mistral-7B-Instruct-v0.2](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2) on the [ai4privacy/pii-masking-200k](https://huggingface.co/datasets/ai4privacy/pii-masking-200k) dataset to **mask personally identifiable information (PII)**.  
 It supports both **GPU inference (merged Hugging Face model)** and **CPU inference (quantized GGUF model via llama.cpp)**, with post-processing for consistent normalization of entity tags.
 
 ---
