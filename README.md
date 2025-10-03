@@ -53,6 +53,7 @@ This project builds a reproducible pipeline for **finetuning, merging, quantizat
    Compare GPU vs CPU outputs on 100 random samples using scripts/eval/run_eval.py. Metrics include confusion matrices and macro Precision/Recall/F1.
 
 **📂 Repository Layout**
+```plaintext
 ${PROJECT_ROOT}
     -- config
         |-- pii_config.yml
