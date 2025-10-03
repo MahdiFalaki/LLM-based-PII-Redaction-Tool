@@ -85,42 +85,56 @@ ${PROJECT_ROOT}
         |-- merge.py
     -- compare_cli.py
     -- evaluate_100.sh
-
+```
 ## ⚡ Quick Start
 1. **Environment**
+   ```plaintext
    conda create -n redaction python=3.11
    conda activate redaction
    pip install -r requirements.txt
+   ```
 
 2. **Preprocess & Train**
+   ```plaintext
    python scripts/train/convert_to_alpaca.py
    accelerate launch -m axolotl.cli.train config/pii_config.yml
+   ```
 
 3. **Merge LoRA**
+   ```plaintext
    python scripts/train/merge.py
+   ```
 
 4. **Convert & Quantize**
+   ```plaintext
    git clone https://github.com/ggerganov/llama.cpp
    cd llama.cpp && cmake -B build && cmake --build build -j && cd ..
    python llama.cpp/convert_hf_to_gguf.py outputs/pii_masking_mistral/merged_pii_model --outfile merged-gguf/mistral7b-redact-f16.gguf
    llama.cpp/build/bin/quantize merged-gguf/mistral7b-redact-f16.gguf merged-gguf/mistral7b-redact-Q4_K_M.gguf Q4_K_M
+   ```
 
 5. **Inference**
 
    * GPU:
 
+      ```plaintext
       python scripts/infer/run_inference_merged.py
+      ```
 
 
    * CPU (Quantized GGUF):
 
+      ```plaintext
       python scripts/infer/pii_app.py
+      ```
 
 6. **Evaluation**
+   ```plaintext
    bash evaluate_100.sh
+   ```
 
 ## ✨ Example
-
+```plaintext
    * Input:
    
    John Smith lives at 123 Main Street, Toronto.  
@@ -131,7 +145,7 @@ ${PROJECT_ROOT}
    
    [FIRSTNAME] [LASTNAME] lives at [ADDRESS].  
    His credit card number is [MASKEDNUMBER].
-
+```
 **📊 Results (100-sample evaluation)** 
    Model	Precision	Recall	F1
    HF merged (GPU)	0.92	0.90	0.91
