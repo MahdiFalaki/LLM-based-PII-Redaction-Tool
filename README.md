@@ -168,7 +168,7 @@ ${PROJECT_ROOT}
    [FIRSTNAME] [LASTNAME] lives at [ADDRESS].  
    His credit card number is [MASKEDNUMBER].
 ```
-## 📊 Results (100-sample evaluation)** 
+## 📊 Results (100-sample evaluation)
 
 *Will be updated soon ...*
 
