@@ -53,18 +53,37 @@ This project builds a reproducible pipeline for **finetuning, merging, quantizat
    Compare GPU vs CPU outputs on 100 random samples using scripts/eval/run_eval.py. Metrics include confusion matrices and macro Precision/Recall/F1.
 
 **📂 Repository Layout**
-   examples/pii_masking/
-   │── config/                 # Training config (Axolotl YAML)
-   │── data/                   # Converted dataset
-   │── merged-gguf/            # Quantized GGUF models
-   │── outputs/                # Fine-tuned + merged Hugging Face model
-   │── scripts/
-   │   ├── train/              # Preprocessing & training
-   │   ├── infer/              # GPU + CPU inference
-   │   ├── eval/               # Evaluation (confusion, PRF)
-   │   ├── utils/              # Post-processing, normalization
-   │── compare_cli.py          # Compare HF (GPU) vs GGUF (CPU) in terminal
-   │── evaluate_100.sh         # Run eval on 100 samples
+${PROJECT_ROOT}
+    -- config
+        |-- pii_config.yml
+        |-- __init__.py
+        |-- config.py
+    -- data
+        |-- pii_mask.jsonl
+    -- merged-gguf
+        |-- mistral7b-redact-f16.gguf
+        |-- mistral7b-redact-Q4_K_M.gguf
+    -- scripts
+        -- train
+            |-- convert_pii_dataset.py
+            |-- axolotl_train.py
+        -- infer
+            |-- gguf_infer.py
+            |-- hf_infer.py
+        -- eval
+            |-- run_eval.py
+            |-- metrics.py
+            |-- evaluate_100.sh
+            |-- data.py
+        -- utils
+            |-- post_processing.py
+            |-- ref_normalize.py
+            |-- prompting.py
+    -- tools
+        |-- convert_to_gguf.sh
+        |-- merge.py
+    -- compare_cli.py
+    -- evaluate_100.sh
 
 ## ⚡ Quick Start
 1. **Environment**
