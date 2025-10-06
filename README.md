@@ -122,6 +122,8 @@ ${PROJECT_ROOT}
    
 ⚠️ The HF Space demo is much slower and slightly less accurate. For original performance, run the GPU merged model locally instead. The CPU model is for the demo-only.
 
+--- 
+
 ## ⚡ Quick Start
 
 1. **Environment**
