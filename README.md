@@ -107,8 +107,7 @@ ${PROJECT_ROOT}
       
      * Used for the Hugging Face Space demo, which is CPU-only.
    
-   ⚠️ The HF Space demo is much slower and less accurate.
-   For original performance, run the GPU merged model locally instead. The CPU model is for the demo-only.
+⚠️ The HF Space demo is much slower and slightly less accurate. For original performance, run the GPU merged model locally instead. The CPU model is for the demo-only.
 
 ## ⚡ Quick Start
 
@@ -122,45 +121,45 @@ ${PROJECT_ROOT}
 2. **Preprocess & Train**
  
 ```
-  python scripts/train/convert_to_alpaca.py
-  accelerate launch -m axolotl.cli.train config/pii_config.yml
+   bash scripts/train/train_full.sh
 ```
 
 3. **Merge LoRA**
 
 ```
-  python scripts/train/merge.py
+   python tools/merge.py
 ```
 
 4. **Convert & Quantize**
 
 ```
-  git clone https://github.com/ggerganov/llama.cpp cd llama.cpp && cmake -B build && cmake --build build -j && cd ..
-  python llama.cpp/convert_hf_to_gguf.py outputs/pii_masking_mistral/merged_pii_model --outfile merged-gguf/mistral7b-redact-f16.gguf llama.cpp/build/bin/quantize merged-gguf/mistral7b-redact-f16.gguf merged-gguf/mistral7b-redact-Q4_K_M.gguf Q4_K_M
+   git clone https://github.com/ggerganov/llama.cpp cd llama.cpp && cmake -B build && cmake --build build -j && cd ..
+   python llama.cpp/convert_hf_to_gguf.py outputs/pii_masking_mistral/merged_pii_model --outfile merged-gguf/mistral7b-redact-f16.gguf
+   llama.cpp/build/bin/quantize merged-gguf/mistral7b-redact-f16.gguf merged-gguf/mistral7b-redact-Q4_K_M.gguf Q4_K_M
 ```
 
 5. **Inference**
 
    * GPU:
 ```
-  python scripts/infer/run_inference_merged.py
+   python apps/hf_demo.py
 ```
    * CPU (Quantized GGUF):
 ```
-  python scripts/infer/pii_app.py
+   python apps/pii_app.py
 ```
 
 6. **Evaluation**
 
 ```
-bash evaluate_100.sh
+   bash evaluate_100.sh
 ```
 
 ## ✨ Example
 
 ```
-  * Input: John Smith lives at 123 Main Street, Toronto. His credit card number is 4532 9483 0294 5521.
-  * Output: [FIRSTNAME] [LASTNAME] lives at [ADDRESS]. His credit card number is [MASKEDNUMBER].
+   * Input: John Smith lives at 123 Main Street, Toronto. His credit card number is 4532 9483 0294 5521.
+   * Output: [FIRSTNAME] [LASTNAME] lives at [ADDRESS]. His credit card number is [MASKEDNUMBER].
 ```
 
 ## 📊 Results (100-sample evaluation)
