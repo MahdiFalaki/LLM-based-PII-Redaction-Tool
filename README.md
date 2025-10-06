@@ -57,35 +57,44 @@ Handling sensitive data securely is critical. Off-the-shelf LLMs are not optimiz
 
 ```
 ${PROJECT_ROOT}
--- config
-  |-- pii_config.yml
-  |-- __init__.py
-  |-- config.py
--- data
-  |-- pii_mask.jsonl -- merged-gguf
-  |-- mistral7b-redact-f16.gguf
-  |-- mistral7b-redact-Q4_K_M.gguf
--- scripts
-  -- train
-    |-- convert_pii_dataset.py
-    |-- axolotl_train.py
-  -- infer
-    |-- gguf_infer.py
-    |-- hf_infer.py
-  -- eval
-    |-- run_eval.py
-    |-- metrics.py
-    |-- evaluate_100.sh
-    |-- data.py
-  -- utils
-    |-- post_processing.py
-    |-- ref_normalize.py
-    |-- prompting.py
-  -- tools
-    |-- convert_to_gguf.sh
-    |-- merge.py
--- compare_cli.py
--- evaluate_100.sh
+
+   -- config
+     |-- pii_config.yml
+     |-- __init__.py
+     |-- config.py
+
+   -- data
+     |-- pii_mask.jsonl -- merged-gguf
+     |-- mistral7b-redact-f16.gguf
+     |-- mistral7b-redact-Q4_K_M.gguf
+
+   -- scripts
+
+     -- train
+       |-- convert_pii_dataset.py
+       |-- axolotl_train.py
+
+     -- infer
+       |-- gguf_infer.py
+       |-- hf_infer.py
+
+     -- eval
+       |-- run_eval.py
+       |-- metrics.py
+       |-- evaluate_100.sh
+       |-- data.py
+
+     -- utils
+       |-- post_processing.py
+       |-- ref_normalize.py
+       |-- prompting.py
+
+     -- tools
+       |-- convert_to_gguf.sh
+       |-- merge.py
+
+   -- compare_cli.py
+   -- evaluate_100.sh
 ```
 
 ## GPU vs CPU Models
