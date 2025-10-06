@@ -1,0 +1,687 @@
+id,source_text,target_text_norm,hf_raw,hf_norm,gguf_raw,gguf_norm
+0,"After the campus tour, please email a welcome packet to Julia Alvarez at julia.alvarez@northfield.edu, and call her tomorrow around 09:45 AM to confirm the mailing address at 2125 Willow Creek Blvd, Denver, CO 80203.","After the campus tour, please email a welcome packet to [FIRSTNAME] [LASTNAME] at [EMAIL], and call her tomorrow around [TIME] to confirm the mailing [ADDRESS].","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: After the campus tour, please email a welcome packet to Julia Alvarez at julia.alvarez@northfield.edu, and call her tomorrow around 09:45 AM to confirm the mailing address at 2125 Willow Creek Blvd, Denver, CO 80203. [/INST] You are a data privacy assistant.
+
+Mask all PII: After the campus tour, please email a welcome packet to [FIRSTNAME] [LASTNAME] at [EMAIL], and call her tomorrow around [TIME] to confirm the mailing address at [BUILDINGNUMBER] [STREET], [CITY], [STATE] [ZIPCODE].</s>","After the campus tour, please email a welcome packet to [FIRSTNAME] [LASTNAME] at [EMAIL], and call her tomorrow around [TIME] to confirm the mailing address at [ADDRESS] [ADDRESS], [ADDRESS], [ADDRESS] [ZIPCODE].","You are a data privacy assistant.
+
+Mask all PII: After the campus tour, please email a welcome packet to [FIRSTNAME] [LASTNAME] at [EMAIL], and call her tomorrow around [TIME] to confirm the mailing address at [BUILDINGNUMBER] [STREET], [CITY], CO [ZIPCODE].","After the campus tour, please email a welcome packet to [FIRSTNAME] [LASTNAME] at [EMAIL], and call her tomorrow around [TIME] to confirm the mailing address at [ADDRESS] [ADDRESS], [ADDRESS], CO [ZIPCODE]."
+1,Security noted repeated logins from 44.12.87.199 and a fallback device reporting 2a01:4f8:c0c:ab12::3 at 03:44:12; the incident file includes the user agent string Mozilla/5.0 (Windows NT 10.0; Win64; x64).,Security noted repeated logins from [IPV4] and a fallback device reporting [IPV6] at [TIME]; the incident file includes the user agent string [USERAGENT].,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Security noted repeated logins from 44.12.87.199 and a fallback device reporting 2a01:4f8:c0c:ab12::3 at 03:44:12; the incident file includes the user agent string Mozilla/5.0 (Windows NT 10.0; Win64; x64). [/INST] You are a data privacy assistant.
+
+Mask all PII: Security noted repeated logins from [IPV4] and a fallback device reporting [IPV6] at [TIME]; the incident file includes the user agent string [USERAGENT].</s>",Security noted repeated logins from [IPV4] and a fallback device reporting [IPV6] at [TIME]; the incident file includes the user agent string [USERAGENT].,"You are a data privacy assistant.
+
+Mask all PII: Security noted repeated logins from [IPV4] and a fallback device reporting [IPV6] at [TIME]; the incident file includes the user agent string [USERAGENT].",Security noted repeated logins from [IPV4] and a fallback device reporting [IPV6] at [TIME]; the incident file includes the user agent string [USERAGENT].
+2,"Please ship the orientation kit to Apt 7B, 19 Baker Street, London, and note the backup drop-off entrance on the rear side of the building along Queen's Passage.","Please ship the orientation kit to [SECONDARYADDRESS], [ADDRESS], and note the backup drop-off entrance on the rear side of the building along [ADDRESS].","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Please ship the orientation kit to Apt 7B, 19 Baker Street, London, and note the backup drop-off entrance on the rear side of the building along Queen's Passage. [/INST] You are a data privacy assistant.
+
+Mask all PII: Please ship the orientation kit to [SECONDARYADDRESS], [BUILDINGNUMBER] [STREET], [STATE], and note the backup drop-off entrance on the rear side of the building along [STREET].</s>","Please ship the orientation kit to [SECONDARYADDRESS], [ADDRESS] [ADDRESS], [ADDRESS], and note the backup drop-off entrance on the rear side of the building along [ADDRESS].","You are a data privacy assistant.
+
+Mask all PII: Please ship the orientation kit to [SECONDARYADDRESS], [BUILDINGNUMBER] [STREET], [STATE], and note the backup drop-off entrance on the rear side of the building along [STREET].","Please ship the orientation kit to [SECONDARYADDRESS], [ADDRESS] [ADDRESS], [ADDRESS], and note the backup drop-off entrance on the rear side of the building along [ADDRESS]."
+3,Finance reports that card 4532 9483 0294 5521 (Visa) was used to pay the conference fee; a second charge appeared using Discover ending 6011 4432 1111 2222 on the same account.,Finance reports that card [MASKEDNUMBER] was used to pay the conference fee; a second charge appeared using [MASKEDNUMBER] on the same account.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Finance reports that card 4532 9483 0294 5521 (Visa) was used to pay the conference fee; a second charge appeared using Discover ending 6011 4432 1111 2222 on the same account. [/INST] You are a data privacy assistant.
+
+Mask all PII: Finance reports that card [PHONENUMBER] (Visa) was used to pay the conference fee; a second charge appeared using Discover ending [PHONENUMBER] on the same account.</s>",Finance reports that card [PHONENUMBER] (Visa) was used to pay the conference fee; a second charge appeared using Discover ending [PHONENUMBER] on the same account.,"You are a data privacy assistant.
+
+Mask all PII: Finance reports that card [PHONENUMBER] (Visa) was used to pay the conference fee; a second charge appeared using Discover ending [PHONENUMBER] on the same account.",Finance reports that card [PHONENUMBER] (Visa) was used to pay the conference fee; a second charge appeared using Discover ending [PHONENUMBER] on the same account.
+4,"During onboarding, please add Ms. Thompson to the Policy Analysis calendar and record her preferred contact number as +1 (415) 555-0198; she prefers afternoon calls after 14:00.","During onboarding, please add [PREFIX] [LASTNAME] to the [JOBAREA] calendar and record her preferred contact number as [PHONENUMBER]; she prefers afternoon calls after [TIME].","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: During onboarding, please add Ms. Thompson to the Policy Analysis calendar and record her preferred contact number as +1 (415) 555-0198; she prefers afternoon calls after 14:00. [/INST] You are a data privacy assistant.
+
+Mask all PII: During onboarding, please add [PREFIX] [LASTNAME] to the Policy Analysis calendar and record her preferred contact number as [PHONENUMBER]; she prefers afternoon calls after 14:00.</s>","During onboarding, please add [PREFIX] [LASTNAME] to the Policy Analysis calendar and record her preferred contact number as [PHONENUMBER]; she prefers afternoon calls after 14:00.","You are a data privacy assistant.
+
+Mask all PII: During onboarding, please add [PREFIX] [LASTNAME] to the Policy Analysis calendar and record her preferred contact number as [PHONENUMBER]; she prefers afternoon calls after 14:00.","During onboarding, please add [PREFIX] [LASTNAME] to the Policy Analysis calendar and record her preferred contact number as [PHONENUMBER]; she prefers afternoon calls after 14:00."
+5,"For the capstone project handoff, share the Git link via email to pierre@lyon.fr and mirror the documentation at https://docs.example.org/research/metrics so the reviewers can access it by Friday.","For the capstone project handoff, share the Git link via email to [EMAIL] and mirror the documentation at [URL] so the reviewers can access it by Friday.","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: For the capstone project handoff, share the Git link via email to pierre@lyon.fr and mirror the documentation at https://docs.example.org/research/metrics so the reviewers can access it by Friday. [/INST] You are a data privacy assistant.
+
+Mask all PII: For the capstone project handoff, share the Git link via email to [EMAIL] and mirror the documentation at [URL] so the reviewers can access it by Friday.</s>","For the capstone project handoff, share the Git link via email to [EMAIL] and mirror the documentation at [URL] so the reviewers can access it by Friday.","You are a data privacy assistant.
+
+Mask all PII: For the capstone project handoff, share the Git link via email to [STATE] and mirror the documentation at [URL] so the reviewers can access it by Friday.","For the capstone project handoff, share the Git link via email to [ADDRESS] and mirror the documentation at [URL] so the reviewers can access it by Friday."
+6,Clinic records show date of birth for patient Isabella: 2009-08-21; her guardian can be reached at 020 7946 0991 if the appointment needs to move to Monday 10:30 AM.,Clinic records show date of birth for patient [FIRSTNAME]: [DOB]; her guardian can be reached at [PHONENUMBER] if the appointment needs to move to Monday [TIME].,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Clinic records show date of birth for patient Isabella: 2009-08-21; her guardian can be reached at 020 7946 0991 if the appointment needs to move to Monday 10:30 AM. [/INST] You are a data privacy assistant.
+
+Mask all PII: Clinic records show date of birth for patient [FIRSTNAME]: [DOB]; her guardian can be reached at [PHONENUMBER] if the appointment needs to move to Monday 10:30 AM.</s>",Clinic records show date of birth for patient [FIRSTNAME]: [DOB]; her guardian can be reached at [PHONENUMBER] if the appointment needs to move to Monday 10:30 AM.,"You are a data privacy assistant.
+
+Mask all PII: Clinic records show date of birth for patient [FIRSTNAME]: [DOB]; her guardian can be reached at [PHONENUMBER] if the appointment needs to move to Monday [TIME].",Clinic records show date of birth for patient [FIRSTNAME]: [DOB]; her guardian can be reached at [PHONENUMBER] if the appointment needs to move to Monday [TIME].
+7,"Conference check-in for Mr. Novak is confirmed at the downtown venue, and his hotel lists the address as 221B Baker Street, London with backup residence at 14 Via Roma, 20100 Milano.","Conference check-in for [PREFIX] [LASTNAME] is confirmed at the downtown venue, and his hotel lists the [ADDRESS] with backup residence at [ADDRESS].","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Conference check-in for Mr. Novak is confirmed at the downtown venue, and his hotel lists the address as 221B Baker Street, London with backup residence at 14 Via Roma, 20100 Milano. [/INST] You are a data privacy assistant.
+
+Mask all PII: Conference check-in for [PREFIX] [LASTNAME] is confirmed at the downtown venue, and his hotel lists the address as [BUILDINGNUMBER][STREET], [STATE] with backup residence at [BUILDINGNUMBER] [STREET], [ZIPCODE] [STATE].</s>","Conference check-in for [PREFIX] [LASTNAME] is confirmed at the downtown venue, and his hotel lists the address as [ADDRESS][ADDRESS], [ADDRESS] with backup residence at [ADDRESS] [ADDRESS], [ZIPCODE] [ADDRESS].","You are a data privacy assistant.
+
+Mask all PII: Conference check-in for [PREFIX] [LASTNAME] is confirmed at the downtown venue, and his hotel lists the address as [BUILDINGNUMBER][STREET], [STATE] with backup residence at [BUILDINGNUMBER] [STREET], [ZIPCODE] [STATE].","Conference check-in for [PREFIX] [LASTNAME] is confirmed at the downtown venue, and his hotel lists the address as [ADDRESS][ADDRESS], [ADDRESS] with backup residence at [ADDRESS] [ADDRESS], [ZIPCODE] [ADDRESS]."
+8,"The facilitator reported geotagging near [33.9425,-118.4081] and asked to keep the group together at the east entrance; if lost, text Maya at 647 555 0199 and she will guide you back.","The facilitator reported geotagging near [NEARBYGPSCOORDINATE] and asked to keep the group together at the [ORDINALDIRECTION] entrance; if lost, text [FIRSTNAME] at [PHONENUMBER] and she will guide you back.","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: The facilitator reported geotagging near [33.9425,-118.4081] and asked to keep the group together at the east entrance; if lost, text Maya at 647 555 0199 and she will guide you back. [/INST] You are a data privacy assistant.
+
+Mask all PII: The facilitator reported geotagging near [NEARBYGPSCOORDINATE] and asked to keep the group together at the east entrance; if lost, text [FIRSTNAME] at [SSN] and she will guide you back.</s>","The facilitator reported geotagging near [NEARBYGPSCOORDINATE] and asked to keep the group together at the east entrance; if lost, text [FIRSTNAME] at [SSN] and she will guide you back.","You are a data privacy assistant.
+
+Mask all PII: The facilitator reported geotagging near [NEARBYGPSCOORDINATE] and asked to keep the group together at the east entrance; if lost, text [FIRSTNAME] at [SSN] and she will guide you back.","The facilitator reported geotagging near [NEARBYGPSCOORDINATE] and asked to keep the group together at the east entrance; if lost, text [FIRSTNAME] at [SSN] and she will guide you back."
+9,"Credential rotation complete: username changed to d.nguyen, and the temporary password set to Q4n!kxj; notify the user once the Single Sign-On page at https://login.school.edu is accessible.","Credential rotation complete: username changed to [USERNAME], and the temporary password set to [PASSWORD]; notify the user once the Single Sign-On page at [URL] is accessible.","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Credential rotation complete: username changed to d.nguyen, and the temporary password set to Q4n!kxj; notify the user once the Single Sign-On page at https://login.school.edu is accessible. [/INST] You are a data privacy assistant.
+
+Mask all PII: Credential rotation complete: username changed to [CURRENCYSYMBOL][CURRENCY], and the temporary password set to [PASSWORD]; notify the user once the Single Sign-On page at [URL] is accessible.</s>","Credential rotation complete: username changed to [CURRENCYSYMBOL][CURRENCY], and the temporary password set to [PASSWORD]; notify the user once the Single Sign-On page at [URL] is accessible.","You are a data privacy assistant.
+
+Mask all PII: Credential rotation complete: username changed to [USERNAME], and the temporary password set to [PASSWORD]; notify the user once the Single Sign-On page at [URL] is accessible.","Credential rotation complete: username changed to [USERNAME], and the temporary password set to [PASSWORD]; notify the user once the Single Sign-On page at [URL] is accessible."
+11,"Operations flagged a transfer using account 33482916, quoted in EUR (€), to our satellite office near 5 Rue de l'Église, 75004 Paris; the invoice remains unpaid.","Operations flagged a transfer using account [ACCOUNTNUMBER], quoted in [CURRENCYCODE] ([CURRENCYSYMBOL]), to our satellite office near [ADDRESS]; the invoice remains unpaid.","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Operations flagged a transfer using account 33482916, quoted in EUR (€), to our satellite office near 5 Rue de l'Église, 75004 Paris; the invoice remains unpaid. [/INST] You are a data privacy assistant.
+
+Mask all PII: Operations flagged a transfer using account [ACCOUNTNUMBER], quoted in [CURRENCYCODE] ([CURRENCYSYMBOL]), to our satellite office near [AGE] Rue de l'Église, [ZIPCODE] [STATE]; the invoice remains unpaid.</s>","Operations flagged a transfer using account [ACCOUNTNUMBER], quoted in [CURRENCYCODE] ([CURRENCYSYMBOL]), to our satellite office near [AGE] Rue de l'Église, [ZIPCODE] [ADDRESS]; the invoice remains unpaid.","You are a data privacy assistant.
+
+Mask all PII: Operations flagged a transfer using account [ACCOUNTNUMBER], quoted in [CURRENCYCODE] ([CURRENCYSYMBOL]), to our satellite office near [AGE] [STREET], [ZIPCODE] [STATE]; the invoice remains unpaid.","Operations flagged a transfer using account [ACCOUNTNUMBER], quoted in [CURRENCYCODE] ([CURRENCYSYMBOL]), to our satellite office near [AGE] [ADDRESS], [ZIPCODE] [ADDRESS]; the invoice remains unpaid."
+12,"Our regional contact, Ms North from the Public Policy group, will run the morning briefing at 08:15 and share slides afterward.","Our regional contact, [PREFIX] [LASTNAME] from the [JOBAREA] group, will run the morning briefing at [TIME] and share slides afterward.","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Our regional contact, Ms North from the Public Policy group, will run the morning briefing at 08:15 and share slides afterward. [/INST] You are a data privacy assistant.
+
+Mask all PII: Our regional contact, [PREFIX] [MIDDLENAME] from the Public Policy group, will run the morning briefing at [TIME] and share slides afterward.</s>","Our regional contact, [PREFIX] [MIDDLENAME] from the Public Policy group, will run the morning briefing at [TIME] and share slides afterward.","You are a data privacy assistant.
+
+Mask all PII: Our regional contact, [PREFIX] [MIDDLENAME] from the Public Policy group, will run the morning briefing at [TIME] and share slides afterward.","Our regional contact, [PREFIX] [MIDDLENAME] from the Public Policy group, will run the morning briefing at [TIME] and share slides afterward."
+13,Laptop telemetry listed traffic from 2001:db8::1 and later from 98.51.22.77; both timestamps fell within the maintenance window ending 18:30.,Laptop telemetry listed traffic from [IPV6] and later from [IPV4]; both timestamps fell within the maintenance window ending [TIME].,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Laptop telemetry listed traffic from 2001:db8::1 and later from 98.51.22.77; both timestamps fell within the maintenance window ending 18:30. [/INST] You are a data privacy assistant.
+
+Mask all PII: Laptop telemetry listed traffic from [IPV6] and later from [IPV4]; both timestamps fell within the maintenance window ending [TIME].</s>",Laptop telemetry listed traffic from [IPV6] and later from [IPV4]; both timestamps fell within the maintenance window ending [TIME].,"You are a data privacy assistant.
+
+Mask all PII: Laptop telemetry listed traffic from [IPV6] and later from [IPV4]; both timestamps fell within the maintenance window ending [TIME].",Laptop telemetry listed traffic from [IPV6] and later from [IPV4]; both timestamps fell within the maintenance window ending [TIME].
+14,"Send the HR welcome email to fernanda.lopes@juris.com and include a calendar placeholder for the orientation site at 2/F, 18 Queen’s Road Central, Hong Kong, noting the guests’ arrival point at the west lobby.","Send the HR welcome email to [EMAIL] and include a calendar placeholder for the orientation site at [SECONDARYADDRESS], [ADDRESS], noting the guests’ arrival point at the [ORDINALDIRECTION] lobby.","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Send the HR welcome email to fernanda.lopes@juris.com and include a calendar placeholder for the orientation site at 2/F, 18 Queen’s Road Central, Hong Kong, noting the guests’ arrival point at the west lobby. [/INST] You are a data privacy assistant.
+
+Mask all PII: Send the HR welcome email to [USERNAME]@juris.com and include a calendar placeholder for the orientation site at [DATE], [TIME] [STREET], [CITY], noting the guests’ arrival point at the west lobby.</s>","Send the HR welcome email to [USERNAME]@juris.com and include a calendar placeholder for the orientation site at [DATE], [TIME] [ADDRESS], [ADDRESS], noting the guests’ arrival point at the west lobby.","You are a data privacy assistant.
+
+Mask all PII: Send the HR welcome email to [USERNAME]@juris.com and include a calendar placeholder for the orientation site at [DATE], [TIME] [STREET], [CITY], noting the guests’ arrival point at the west lobby.","Send the HR welcome email to [USERNAME]@juris.com and include a calendar placeholder for the orientation site at [DATE], [TIME] [ADDRESS], [ADDRESS], noting the guests’ arrival point at the west lobby."
+15,Grant accounting to verify the international wire: IBAN GB33BUKB20201555555555 and BIC DEUTDEMMXXX were provided on the form submitted by Dr. Mendes.,Grant accounting to verify the international wire: IBAN [IBAN] and BIC [BIC] were provided on the form submitted by [PREFIX] [LASTNAME].,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Grant accounting to verify the international wire: IBAN GB33BUKB20201555555555 and BIC DEUTDEMMXXX were provided on the form submitted by Dr. Mendes. [/INST] You are a data privacy assistant.
+
+Mask all PII: Grant accounting to verify the international wire: IBAN [IBAN] and BIC [BIC] were provided on the form submitted by [PREFIX] [LASTNAME].</s>",Grant accounting to verify the international wire: IBAN [IBAN] and BIC [BIC] were provided on the form submitted by [PREFIX] [LASTNAME].,"You are a data privacy assistant.
+
+Mask all PII: Grant accounting to verify the international wire: IBAN [IBAN] and BIC [BIC] were provided on the form submitted by [PREFIX] [LASTNAME].",Grant accounting to verify the international wire: IBAN [IBAN] and BIC [BIC] were provided on the form submitted by [PREFIX] [LASTNAME].
+17,The admissions office asked that we call parent contact Miguel at +1 202-555-8801 after sending the syllabus PDF to parent_of_olivia@schoolmail.edu by 16:30 today.,The admissions office asked that we call parent contact [FIRSTNAME] at [PHONENUMBER] after sending the syllabus PDF to [EMAIL] by [TIME] today.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: The admissions office asked that we call parent contact Miguel at +1 202-555-8801 after sending the syllabus PDF to parent_of_olivia@schoolmail.edu by 16:30 today. [/INST] You are a data privacy assistant.
+
+Mask all PII: The admissions office asked that we call parent contact [FIRSTNAME] at [PHONENUMBER] after sending the syllabus PDF to parent_of_[FIRSTNAME]@schoolmail.edu by [TIME] today.</s>",The admissions office asked that we call parent contact [FIRSTNAME] at [PHONENUMBER] after sending the syllabus PDF to parent_of_[FIRSTNAME]@schoolmail.edu by [TIME] today.,"You are a data privacy assistant.
+
+Mask all PII: The admissions office asked that we call parent contact [FIRSTNAME] at [PHONENUMBER] after sending the syllabus PDF to parent_of_[FIRSTNAME]@schoolmail.edu by [TIME] today.",The admissions office asked that we call parent contact [FIRSTNAME] at [PHONENUMBER] after sending the syllabus PDF to parent_of_[FIRSTNAME]@schoolmail.edu by [TIME] today.
+18,"During the facilities walkthrough, the badge reader recorded MAC 00:1A:2B:3C:4D:5E and the HVAC controller reported IMEI 06-184755-866851-3; both events were archived.","During the facilities walkthrough, the badge reader recorded MAC [MAC] and the HVAC controller reported IMEI [PHONEIMEI]; both events were archived.","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: During the facilities walkthrough, the badge reader recorded MAC 00:1A:2B:3C:4D:5E and the HVAC controller reported IMEI 06-184755-866851-3; both events were archived. [/INST] You are a data privacy assistant.
+
+Mask all PII: During the facilities walkthrough, the badge reader recorded MAC [MAC] and the HVAC controller reported IMEI [PHONEIMEI]; both events were archived.</s>","During the facilities walkthrough, the badge reader recorded MAC [MAC] and the HVAC controller reported IMEI [PHONEIMEI]; both events were archived.","You are a data privacy assistant.
+
+Mask all PII: During the facilities walkthrough, the badge reader recorded MAC [MAC] and the HVAC controller reported IMEI [PHONEIMEI]; both events were archived.","During the facilities walkthrough, the badge reader recorded MAC [MAC] and the HVAC controller reported IMEI [PHONEIMEI]; both events were archived."
+19,Student support will send a reminder to Rebeca regarding the cardiology consult set for 16/11/1983 at 4:40 AM; payment was logged on a Mastercard ending 5982215161172252.,Student support will send a reminder to [FIRSTNAME] regarding the cardiology consult set for [DOB] at [TIME]; payment was logged on a [MASKEDNUMBER].,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Student support will send a reminder to Rebeca regarding the cardiology consult set for 16/11/1983 at 4:40 AM; payment was logged on a Mastercard ending 5982215161172252. [/INST] You are a data privacy assistant.
+
+Mask all PII: Student support will send a reminder to [FIRSTNAME] regarding the cardiology consult set for [DATE] at [TIME]; payment was logged on a Mastercard ending [MASKEDNUMBER].</s>",Student support will send a reminder to [FIRSTNAME] regarding the cardiology consult set for [DATE] at [TIME]; payment was logged on a Mastercard ending [MASKEDNUMBER].,"You are a data privacy assistant.
+
+Mask all PII: Student support will send a reminder to [FIRSTNAME] regarding the cardiology consult set for [DATE] at [TIME]; payment was logged on a Mastercard ending [MASKEDNUMBER].",Student support will send a reminder to [FIRSTNAME] regarding the cardiology consult set for [DATE] at [TIME]; payment was logged on a Mastercard ending [MASKEDNUMBER].
+20,"Logistics routed the package from 4821 Green Hill Road, Portland, OR 97204 to the downtown locker at 88 King St, Sydney; please confirm delivery photos.",Logistics routed the package from [ADDRESS] to the downtown locker at [ADDRESS]; please confirm delivery photos.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Logistics routed the package from 4821 Green Hill Road, Portland, OR 97204 to the downtown locker at 88 King St, Sydney; please confirm delivery photos. [/INST] You are a data privacy assistant.
+
+Mask all PII: Logistics routed the package from [BUILDINGNUMBER] [STREET], [CITY], [STATE] [ZIPCODE] to the downtown locker at [BUILDINGNUMBER] [STREET], [CITY]; please confirm delivery photos.</s>","Logistics routed the package from [ADDRESS] [ADDRESS], [ADDRESS], [ADDRESS] [ZIPCODE] to the downtown locker at [ADDRESS] [ADDRESS], [ADDRESS]; please confirm delivery photos.","You are a data privacy assistant.
+
+Mask all PII: Logistics routed the package from [BUILDINGNUMBER] [STREET], [CITY], [STATE] [ZIPCODE] to the downtown locker at [BUILDINGNUMBER] [STREET], [CITY]; please confirm delivery photos.","Logistics routed the package from [ADDRESS] [ADDRESS], [ADDRESS], [ADDRESS] [ZIPCODE] to the downtown locker at [ADDRESS] [ADDRESS], [ADDRESS]; please confirm delivery photos."
+21,"When you arrive, meet the team at the plaza by [-23.5617,-46.6561]; if you cannot find us, call Ana P. at +34 612 778 903 and we will walk you through the south gate.","When you arrive, meet the team at the plaza by [NEARBYGPSCOORDINATE]; if you cannot find us, call [FIRSTNAME] [MIDDLENAME] at [PHONENUMBER] and we will walk you through the [ORDINALDIRECTION] gate.","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: When you arrive, meet the team at the plaza by [-23.5617,-46.6561]; if you cannot find us, call Ana P. at +34 612 778 903 and we will walk you through the south gate. [/INST] You are a data privacy assistant.
+
+Mask all PII: When you arrive, meet the team at the plaza by [NEARBYGPSCOORDINATE]; if you cannot find us, call [FIRSTNAME] [CURRENCYSYMBOL] at [PHONENUMBER] and we will walk you through the south gate.</s>","When you arrive, meet the team at the plaza by [NEARBYGPSCOORDINATE]; if you cannot find us, call [FIRSTNAME] [CURRENCYSYMBOL] at [PHONENUMBER] and we will walk you through the south gate.","You are a data privacy assistant.
+
+Mask all PII: When you arrive, meet the team at the plaza by [NEARBYGPSCOORDINATE]; if you cannot find us, call [FIRSTNAME] [CURRENCYSYMBOL] at [PHONENUMBER] and we will walk you through the south gate.","When you arrive, meet the team at the plaza by [NEARBYGPSCOORDINATE]; if you cannot find us, call [FIRSTNAME] [CURRENCYSYMBOL] at [PHONENUMBER] and we will walk you through the south gate."
+23,The IT ticket escalated by Olivia Carter (UX Research Lead) mentions a suspicious wallet 0x7e57d07c3d0c0ffee67abc0123456789abcd1234 and a follow-up at 11:05 AM on 2023-01-04.,The IT ticket escalated by [FIRSTNAME] [LASTNAME] ([JOBTITLE]) mentions a suspicious wallet [ETHEREUMADDRESS] and a follow-up at [TIME] on [DATE].,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: The IT ticket escalated by Olivia Carter (UX Research Lead) mentions a suspicious wallet 0x7e57d07c3d0c0ffee67abc0123456789abcd1234 and a follow-up at 11:05 AM on 2023-01-04. [/INST] You are a data privacy assistant.
+
+Mask all PII: The IT ticket escalated by [FIRSTNAME] [LASTNAME] (UX [JOBAREA] Lead) mentions a suspicious wallet [ETHEREUMADDRESS] and a follow-up at [TIME] on [DATE].</s>",The IT ticket escalated by [FIRSTNAME] [LASTNAME] (UX [JOBAREA] Lead) mentions a suspicious wallet [ETHEREUMADDRESS] and a follow-up at [TIME] on [DATE].,"You are a data privacy assistant.
+
+Mask all PII: The IT ticket escalated by [FIRSTNAME] [LASTNAME] (UX [JOBAREA] Lead) mentions a suspicious wallet [ETHEREUMADDRESS] and a follow-up at [TIME] on [DATE].",The IT ticket escalated by [FIRSTNAME] [LASTNAME] (UX [JOBAREA] Lead) mentions a suspicious wallet [ETHEREUMADDRESS] and a follow-up at [TIME] on [DATE].
+24,Our procurement team received a transfer request using account 00839217 with PIN 1230; the memo references a delivery to 5/F loading bay on Orchard Blvd.,Our procurement team received a transfer request using account [ACCOUNTNUMBER] with PIN [PIN]; the memo references a delivery to [SECONDARYADDRESS] loading bay on [ADDRESS].,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Our procurement team received a transfer request using account 00839217 with PIN 1230; the memo references a delivery to 5/F loading bay on Orchard Blvd. [/INST] You are a data privacy assistant.
+
+Mask all PII: Our procurement team received a transfer request using account [ACCOUNTNUMBER] with PIN [PIN]; the memo references a delivery to 5/F loading bay on [STREET].</s>",Our procurement team received a transfer request using account [ACCOUNTNUMBER] with PIN [PIN]; the memo references a delivery to 5/F loading bay on [ADDRESS].,"You are a data privacy assistant.
+
+Mask all PII: Our procurement team received a transfer request using account [ACCOUNTNUMBER] with PIN [PIN]; the memo references a delivery to 5/F loading bay on [STREET].",Our procurement team received a transfer request using account [ACCOUNTNUMBER] with PIN [PIN]; the memo references a delivery to 5/F loading bay on [ADDRESS].
+25,"Scholarship letters addressed to 24 Rue des Écoles, Lyon and to 9A Newmarket Road, Cambridge were returned; please verify the apartment line for the first address.",Scholarship letters addressed to [ADDRESS] and to [ADDRESS] were returned; please verify the apartment line for the first address.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Scholarship letters addressed to 24 Rue des Écoles, Lyon and to 9A Newmarket Road, Cambridge were returned; please verify the apartment line for the first address. [/INST] You are a data privacy assistant.
+
+Mask all PII: Scholarship letters addressed to [AGE] [STREET], [STATE] and to [AGE] [STREET], [CITY] were returned; please verify the apartment line for the first address.</s>","Scholarship letters addressed to [AGE] [ADDRESS], [ADDRESS] and to [AGE] [ADDRESS], [ADDRESS] were returned; please verify the apartment line for the first address.","You are a data privacy assistant.
+
+Mask all PII: Scholarship letters addressed to [AGE] [STREET], [STATE] and to [AGE] [STREET], [CITY] were returned; please verify the apartment line for the first address.","Scholarship letters addressed to [AGE] [ADDRESS], [ADDRESS] and to [AGE] [ADDRESS], [ADDRESS] were returned; please verify the apartment line for the first address."
+26,A message from ceo@foundry.ai requested that legal@foundry.ai review the attached terms; the sender also pasted the legacy portal link http://legacy.staff.local which should be removed.,A message from [EMAIL] requested that [EMAIL] review the attached terms; the sender also pasted the legacy portal link [URL] which should be removed.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: A message from ceo@foundry.ai requested that legal@foundry.ai review the attached terms; the sender also pasted the legacy portal link http://legacy.staff.local which should be removed. [/INST] You are a data privacy assistant.
+
+Mask all PII: A message from ceo@foundry.ai requested that legal@foundry.ai review the attached terms; the sender also pasted the legacy portal link [URL] which should be removed.</s>",A message from ceo@foundry.ai requested that legal@foundry.ai review the attached terms; the sender also pasted the legacy portal link [URL] which should be removed.,"You are a data privacy assistant.
+
+Mask all PII: A message from ceo@foundry.ai requested that legal@foundry.ai review the attached terms; the sender also pasted the legacy portal link [URL] which should be removed.",A message from ceo@foundry.ai requested that legal@foundry.ai review the attached terms; the sender also pasted the legacy portal link [URL] which should be removed.
+27,Vehicle access permits were validated for UCF7MLHJ8ZK266446 and for plate AU29QFT; the guard recorded the time as 06:41.,Vehicle access permits were validated for [VEHICLEVIN] and for plate [VEHICLEVRM]; the guard recorded the time as [TIME].,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Vehicle access permits were validated for UCF7MLHJ8ZK266446 and for plate AU29QFT; the guard recorded the time as 06:41. [/INST] You are a data privacy assistant.
+
+Mask all PII: Vehicle access permits were validated for [VEHICLEVIN] and for plate [VEHICLEVRM]; the guard recorded the time as [TIME].</s>",Vehicle access permits were validated for [VEHICLEVIN] and for plate [VEHICLEVRM]; the guard recorded the time as [TIME].,"You are a data privacy assistant.
+
+Mask all PII: Vehicle access permits were validated for [VEHICLEVIN] and for plate [VEHICLEVRM]; the guard recorded the time as [TIME].",Vehicle access permits were validated for [VEHICLEVIN] and for plate [VEHICLEVRM]; the guard recorded the time as [TIME].
+29,"Parent portal shows the guardian height as 171 cm, eye color as Brown, and preferred callback after 10:18 PM due to work schedule.","Parent portal shows the guardian [HEIGHT], [EYECOLOR], and preferred callback after [TIME] due to work schedule.","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Parent portal shows the guardian height as 171 cm, eye color as Brown, and preferred callback after 10:18 PM due to work schedule. [/INST] You are a data privacy assistant.
+
+Mask all PII: Parent portal shows the guardian height as [HEIGHT], eye color as [EYECOLOR], and preferred callback after [TIME] due to work schedule.</s>","Parent portal shows the guardian height as [HEIGHT], eye color as [EYECOLOR], and preferred callback after [TIME] due to work schedule.","You are a data privacy assistant.
+
+Mask all PII: Parent portal shows the guardian height as [HEIGHT], eye color as [EYECOLOR], and preferred callback after [TIME] due to work schedule.","Parent portal shows the guardian height as [HEIGHT], eye color as [EYECOLOR], and preferred callback after [TIME] due to work schedule."
+30,"The dean’s office asked Dr. Feeney to share a draft on Barnstable Town’s education trends, and to email Jana_Collier@hotmail.com with a copy before the meeting.","The dean’s office asked [PREFIX] [LASTNAME] to share a draft on [ADDRESS]’s education trends, and to email [EMAIL] with a copy before the meeting.","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: The dean’s office asked Dr. Feeney to share a draft on Barnstable Town’s education trends, and to email Jana_Collier@hotmail.com with a copy before the meeting. [/INST] You are a data privacy assistant.
+
+Mask all PII: The dean’s office asked [PREFIX] [LASTNAME] to share a draft on [CITY]’s education trends, and to email [EMAIL] with a copy before the meeting.</s>","The dean’s office asked [PREFIX] [LASTNAME] to share a draft on [ADDRESS]’s education trends, and to email [EMAIL] with a copy before the meeting.","You are a data privacy assistant.
+
+Mask all PII: The dean’s office asked [PREFIX] [LASTNAME] to share a draft on [CITY]’s education trends, and to email [EMAIL] with a copy before the meeting.","The dean’s office asked [PREFIX] [LASTNAME] to share a draft on [ADDRESS]’s education trends, and to email [EMAIL] with a copy before the meeting."
+31,"Payment confirmation shows 1,250 USD debited for books and supplies; for audit, reference invoice ID and keep the transfer memo with account 77290311.","Payment confirmation shows [MASKEDNUMBER] [CURRENCYCODE] debited for books and supplies; for audit, reference invoice ID and keep the transfer memo with account [ACCOUNTNUMBER].","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Payment confirmation shows 1,250 USD debited for books and supplies; for audit, reference invoice ID and keep the transfer memo with account 77290311. [/INST] You are a data privacy assistant.
+
+Mask all PII: Payment confirmation shows 1,250 [CURRENCYCODE] debited for books and supplies; for audit, reference invoice ID and keep the transfer memo with account [ACCOUNTNUMBER].</s>","Payment confirmation shows 1,250 [CURRENCYCODE] debited for books and supplies; for audit, reference invoice ID and keep the transfer memo with account [ACCOUNTNUMBER].","You are a data privacy assistant.
+
+Mask all PII: Payment confirmation shows 1,250 [CURRENCYCODE] debited for books and supplies; for audit, reference invoice ID and keep the transfer memo with account [ACCOUNTNUMBER].","Payment confirmation shows 1,250 [CURRENCYCODE] debited for books and supplies; for audit, reference invoice ID and keep the transfer memo with account [ACCOUNTNUMBER]."
+32,"Your security page at https://support.megaco.com/help lists the updated procedures; if you still can’t log in, contact the on-call number 0208 555 2900 for assistance.","Your security page at [URL] lists the updated procedures; if you still can’t log in, contact the on-call number [PHONENUMBER] for assistance.","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Your security page at https://support.megaco.com/help lists the updated procedures; if you still can’t log in, contact the on-call number 0208 555 2900 for assistance. [/INST] You are a data privacy assistant.
+
+Mask all PII: Your security page at [URL] lists the updated procedures; if you still can’t log in, contact the on-call number [PHONENUMBER] for assistance.</s>","Your security page at [URL] lists the updated procedures; if you still can’t log in, contact the on-call number [PHONENUMBER] for assistance.","You are a data privacy assistant.
+
+Mask all PII: Your security page at [URL] lists the updated procedures; if you still can’t log in, contact the on-call number [PHONENUMBER] for assistance.","Your security page at [URL] lists the updated procedures; if you still can’t log in, contact the on-call number [PHONENUMBER] for assistance."
+33,The health psychologist confirmed Ms.North for a 10:02 AM consultation; the clinic file notes ID 04-558619-832604-8 was updated by the receptionist.,The health psychologist confirmed [PREFIX][MIDDLENAME] for a [TIME] consultation; the clinic file notes ID [PHONEIMEI] was updated by the receptionist.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: The health psychologist confirmed Ms.North for a 10:02 AM consultation; the clinic file notes ID 04-558619-832604-8 was updated by the receptionist. [/INST] You are a data privacy assistant.
+
+Mask all PII: The health psychologist confirmed [PREFIX][MIDDLENAME] for a [TIME] consultation; the clinic file notes ID [PHONEIMEI] was updated by the receptionist.</s>",The health psychologist confirmed [PREFIX][MIDDLENAME] for a [TIME] consultation; the clinic file notes ID [PHONEIMEI] was updated by the receptionist.,"You are a data privacy assistant.
+
+Mask all PII: The health psychologist confirmed [PREFIX][MIDDLENAME] for a [TIME] consultation; the clinic file notes ID [PHONEIMEI] was updated by the receptionist.",The health psychologist confirmed [PREFIX][MIDDLENAME] for a [TIME] consultation; the clinic file notes ID [PHONEIMEI] was updated by the receptionist.
+35,We booked a rental for Rakesh in the Austin office and set the machine learning seminar for Monday 9:30 AM; please invite the department list.,We booked a rental for [FIRSTNAME] in the [ADDRESS] office and set the [JOBAREA] seminar for Monday [TIME]; please invite the department list.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: We booked a rental for Rakesh in the Austin office and set the machine learning seminar for Monday 9:30 AM; please invite the department list. [/INST] You are a data privacy assistant.
+
+Mask all PII: We booked a rental for [FIRSTNAME] in the [CITY] office and set the machine learning seminar for Monday [TIME]; please invite the department list.</s>",We booked a rental for [FIRSTNAME] in the [ADDRESS] office and set the machine learning seminar for Monday [TIME]; please invite the department list.,"You are a data privacy assistant.
+
+Mask all PII: We booked a rental for [FIRSTNAME] in the [CITY] office and set the machine learning seminar for Monday [TIME]; please invite the department list.",We booked a rental for [FIRSTNAME] in the [ADDRESS] office and set the machine learning seminar for Monday [TIME]; please invite the department list.
+36,Records show that blue team members Sarah Nguyen and David Park arrived late; note them as excused and ping Sarah at 415-555-1299 if the schedule changes.,Records show that blue team members [FIRSTNAME] [LASTNAME] and [FIRSTNAME] [LASTNAME] arrived late; note them as excused and ping [FIRSTNAME] at [PHONENUMBER] if the schedule changes.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Records show that blue team members Sarah Nguyen and David Park arrived late; note them as excused and ping Sarah at 415-555-1299 if the schedule changes. [/INST] You are a data privacy assistant.
+
+Mask all PII: Records show that [EYECOLOR] team members [FIRSTNAME] [LASTNAME] and [FIRSTNAME] [LASTNAME] arrived late; note them as excused and ping [FIRSTNAME] at [PHONENUMBER] if the schedule changes.</s>",Records show that [EYECOLOR] team members [FIRSTNAME] [LASTNAME] and [FIRSTNAME] [LASTNAME] arrived late; note them as excused and ping [FIRSTNAME] at [PHONENUMBER] if the schedule changes.,"You are a data privacy assistant.
+
+Mask all PII: Records show that blue team members [FIRSTNAME] [LASTNAME] and [FIRSTNAME] [LASTNAME] arrived late; note them as excused and ping [FIRSTNAME] at [PHONENUMBER] if the schedule changes.",Records show that blue team members [FIRSTNAME] [LASTNAME] and [FIRSTNAME] [LASTNAME] arrived late; note them as excused and ping [FIRSTNAME] at [PHONENUMBER] if the schedule changes.
+37,'Sociology of Education' correspondence should be routed through dean-office@univ.edu; archive a copy in the department drive and post the link to https://uni.example.edu/admit for reference.,'Sociology of Education' correspondence should be routed through [EMAIL]; archive a copy in the department drive and post the link to [URL] for reference.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Sociology of Education' correspondence should be routed through dean-office@univ.edu; archive a copy in the department drive and post the link to https://uni.example.edu/admit for reference. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Sociology of Education' correspondence should be routed through [EMAIL]; archive a copy in the department drive and post the link to [URL] for reference.</s>",'Sociology of Education' correspondence should be routed through [EMAIL]; archive a copy in the department drive and post the link to [URL] for reference.,"You are a data privacy assistant.
+
+Mask all PII: 'Sociology of Education' correspondence should be routed through dean-office@univ.edu; archive a copy in the department drive and post the link to [URL] for reference.",'Sociology of Education' correspondence should be routed through dean-office@univ.edu; archive a copy in the department drive and post the link to [URL] for reference.
+38,"'Curriculum development that suits the modern Research' is the working title, with module notes referencing 109.4.61.213; ensure the IPv6 entries like 4d36:f8ad:4ebd:1bff:c5eb:62aa:b4d7:dddf are also logged.","'Curriculum development that suits the modern [JOBAREA]' is the working title, with module notes referencing [IPV4]; ensure the IPv6 entries like [IPV6] are also logged.","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Curriculum development that suits the modern Research' is the working title, with module notes referencing 109.4.61.213; ensure the IPv6 entries like 4d36:f8ad:4ebd:1bff:c5eb:62aa:b4d7:dddf are also logged. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Curriculum development that suits the modern [JOBAREA]' is the working title, with module notes referencing [IPV4]; ensure the IPv6 entries like [IPV6] are also logged.</s>","'Curriculum development that suits the modern [JOBAREA]' is the working title, with module notes referencing [IPV4]; ensure the IPv6 entries like [IPV6] are also logged.","You are a data privacy assistant.
+
+Mask all PII: 'Curriculum development that suits the modern [JOBAREA]' is the working title, with module notes referencing [IPV4]; ensure the IPv6 entries like [IPV6] are also logged.","'Curriculum development that suits the modern [JOBAREA]' is the working title, with module notes referencing [IPV4]; ensure the IPv6 entries like [IPV6] are also logged."
+39,Caterer invoice reflects a Discover charge and a second hold on 2948447876023997; finance will reconcile at day end.,Caterer invoice reflects a [MASKEDNUMBER] charge and a second hold on [MASKEDNUMBER]; finance will reconcile at day end.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Caterer invoice reflects a Discover charge and a second hold on 2948447876023997; finance will reconcile at day end. [/INST] You are a data privacy assistant.
+
+Mask all PII: Caterer invoice reflects a [CREDITCARDISSUER] charge and a second hold on [CREDITCARDNUMBER]; finance will reconcile at day end.</s>",Caterer invoice reflects a [MASKEDNUMBER] charge and a second hold on [MASKEDNUMBER]; finance will reconcile at day end.,"You are a data privacy assistant.
+
+Mask all PII: Caterer invoice reflects a [CREDITCARDISSUER] charge and a second hold on [CREDITCARDNUMBER]; finance will reconcile at day end.",Caterer invoice reflects a [MASKEDNUMBER] charge and a second hold on [MASKEDNUMBER]; finance will reconcile at day end.
+41,"The wellness portal can be accessed near [-71.6702,-107.6572]; for debugging on lab PCs, the string Mozilla/5.0 (Macintosh; PPC Mac OS X 10.7.5; rv:12.5) Gecko/20100101 Firefox/12.5.9 may appear in the logs.","The wellness portal can be accessed near [NEARBYGPSCOORDINATE]; for debugging on lab PCs, the string [USERAGENT] may appear in the logs.","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: The wellness portal can be accessed near [-71.6702,-107.6572]; for debugging on lab PCs, the string Mozilla/5.0 (Macintosh; PPC Mac OS X 10.7.5; rv:12.5) Gecko/20100101 Firefox/12.5.9 may appear in the logs. [/INST] You are a data privacy assistant.
+
+Mask all PII: The wellness portal can be accessed near [NEARBYGPSCOORDINATE]; for debugging on lab PCs, the string [USERAGENT] may appear in the logs.</s>","The wellness portal can be accessed near [NEARBYGPSCOORDINATE]; for debugging on lab PCs, the string [USERAGENT] may appear in the logs.","You are a data privacy assistant.
+
+Mask all PII: The wellness portal can be accessed near [NEARBYGPSCOORDINATE]; for debugging on lab PCs, the string [USERAGENT] may appear in the logs.","The wellness portal can be accessed near [NEARBYGPSCOORDINATE]; for debugging on lab PCs, the string [USERAGENT] may appear in the logs."
+42,Counselor notes state that the guardian identifies as Non-binary and prefers email follow-ups after 18:00; keep that in the case file.,Counselor notes state that the guardian identifies as [GENDER] and prefers email follow-ups after [TIME]; keep that in the case file.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Counselor notes state that the guardian identifies as Non-binary and prefers email follow-ups after 18:00; keep that in the case file. [/INST] You are a data privacy assistant.
+
+Mask all PII: Counselor notes state that the guardian identifies as [GENDER] and prefers email follow-ups after 18:00; keep that in the case file.</s>",Counselor notes state that the guardian identifies as [GENDER] and prefers email follow-ups after 18:00; keep that in the case file.,"You are a data privacy assistant.
+
+Mask all PII: Counselor notes state that the guardian identifies as [GENDER] and prefers email follow-ups after 18:00; keep that in the case file.",Counselor notes state that the guardian identifies as [GENDER] and prefers email follow-ups after 18:00; keep that in the case file.
+43,Use the temporary materials portal at http://intra.temp.school/login and upload the scanned forms; the registrar will confirm at 07:45 AM.,Use the temporary materials portal at [URL] and upload the scanned forms; the registrar will confirm at [TIME].,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Use the temporary materials portal at http://intra.temp.school/login and upload the scanned forms; the registrar will confirm at 07:45 AM. [/INST] You are a data privacy assistant.
+
+Mask all PII: Use the temporary materials portal at [URL] and upload the scanned forms; the registrar will confirm at [TIME].</s>",Use the temporary materials portal at [URL] and upload the scanned forms; the registrar will confirm at [TIME].,"You are a data privacy assistant.
+
+Mask all PII: Use the temporary materials portal at [URL] and upload the scanned forms; the registrar will confirm at [TIME].",Use the temporary materials portal at [URL] and upload the scanned forms; the registrar will confirm at [TIME].
+44,"For the research stipend, keep payments in CHF and share updates with the Zurich office; the memo references local currency handling.","For the research stipend, keep payments in [CURRENCYCODE] and share updates with the [ADDRESS] office; the memo references local currency handling.","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: For the research stipend, keep payments in CHF and share updates with the Zurich office; the memo references local currency handling. [/INST] You are a data privacy assistant.
+
+Mask all PII: For the research stipend, keep payments in [CURRENCYCODE] and share updates with the [STATE] office; the memo references local currency handling.</s>","For the research stipend, keep payments in [CURRENCYCODE] and share updates with the [ADDRESS] office; the memo references local currency handling.","You are a data privacy assistant.
+
+Mask all PII: For the research stipend, keep payments in [CURRENCYCODE] and share updates with the [STATE] office; the memo references local currency handling.","For the research stipend, keep payments in [CURRENCYCODE] and share updates with the [ADDRESS] office; the memo references local currency handling."
+45,Nurse schedule changes were emailed to erin.o@clinic.ca and copied to operations; the shift handoff remains at 06:00.,Nurse schedule changes were emailed to [EMAIL] and copied to operations; the shift handoff remains at [TIME].,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Nurse schedule changes were emailed to erin.o@clinic.ca and copied to operations; the shift handoff remains at 06:00. [/INST] You are a data privacy assistant.
+
+Mask all PII: Nurse schedule changes were emailed to [USERNAME]@clinic.ca and copied to operations; the shift handoff remains at [TIME].</s>",Nurse schedule changes were emailed to [USERNAME]@clinic.ca and copied to operations; the shift handoff remains at [TIME].,"You are a data privacy assistant.
+
+Mask all PII: Nurse schedule changes were emailed to [USERNAME]@clinic.ca and copied to operations; the shift handoff remains at [TIME].",Nurse schedule changes were emailed to [USERNAME]@clinic.ca and copied to operations; the shift handoff remains at [TIME].
+47,"A phishing notice warned, “We never send an email asking for your E5_N8G2xWM6D,” reminding users to secure their accounts and change passwords immediately if exposed.","A phishing notice warned, “We never send an email asking for your [PASSWORD],” reminding users to secure their accounts and change passwords immediately if exposed.","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: A phishing notice warned, “We never send an email asking for your E5_N8G2xWM6D,” reminding users to secure their accounts and change passwords immediately if exposed. [/INST] You are a data privacy assistant.
+
+Mask all PII: A phishing notice warned, “We never send an email asking for your [PASSWORD],” reminding users to secure their accounts and change passwords immediately if exposed.</s>","A phishing notice warned, “We never send an email asking for your [PASSWORD],” reminding users to secure their accounts and change passwords immediately if exposed.","You are a data privacy assistant.
+
+Mask all PII: A phishing notice warned, “We never send an email asking for your [PASSWORD],” reminding users to secure their accounts and change passwords immediately if exposed.","A phishing notice warned, “We never send an email asking for your [PASSWORD],” reminding users to secure their accounts and change passwords immediately if exposed."
+48,Archives indicate a date of birth of 29/12/1957 for the subject; the file also references an IPv6 address edaf:fd8f:e1e8:cfec:8bab:1afd:6aad:550c associated with the upload.,Archives indicate a date of birth of [DOB] for the subject; the file also references an IPv6 address [IPV6] associated with the upload.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Archives indicate a date of birth of 29/12/1957 for the subject; the file also references an IPv6 address edaf:fd8f:e1e8:cfec:8bab:1afd:6aad:550c associated with the upload. [/INST] You are a data privacy assistant.
+
+Mask all PII: Archives indicate a date of birth of [DOB] for the subject; the file also references an IPv6 address [IPV6] associated with the upload.</s>",Archives indicate a date of birth of [DOB] for the subject; the file also references an IPv6 address [IPV6] associated with the upload.,"You are a data privacy assistant.
+
+Mask all PII: Archives indicate a date of birth of [DOB] for the subject; the file also references an IPv6 address [IPV6] associated with the upload.",Archives indicate a date of birth of [DOB] for the subject; the file also references an IPv6 address [IPV6] associated with the upload.
+49,City maintenance reported a sensor heartbeat from 215.114.180.213 during an alert about credit card number 6381973478101820; the analyst flagged it for follow-up.,City maintenance reported a sensor heartbeat from [IPV4] during an alert about credit card number [MASKEDNUMBER]; the analyst flagged it for follow-up.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: City maintenance reported a sensor heartbeat from 215.114.180.213 during an alert about credit card number 6381973478101820; the analyst flagged it for follow-up. [/INST] You are a data privacy assistant.
+
+Mask all PII: City maintenance reported a sensor heartbeat from [IPV4] during an alert about credit card number [CREDITCARDNUMBER]; the analyst flagged it for follow-up.</s>",City maintenance reported a sensor heartbeat from [IPV4] during an alert about credit card number [MASKEDNUMBER]; the analyst flagged it for follow-up.,"You are a data privacy assistant.
+
+Mask all PII: City maintenance reported a sensor heartbeat from [IPV4] during an alert about credit card number [CREDITCARDNUMBER]; the analyst flagged it for follow-up.",City maintenance reported a sensor heartbeat from [IPV4] during an alert about credit card number [MASKEDNUMBER]; the analyst flagged it for follow-up.
+50,Records list a contact named Harvey who is coordinating outreach in Uri; please sync with the policy team to ensure the right messaging for Monday.,Records list a contact named [FIRSTNAME] who is coordinating outreach in [ADDRESS]; please sync with the policy team to ensure the right messaging for Monday.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Records list a contact named Harvey who is coordinating outreach in Uri; please sync with the policy team to ensure the right messaging for Monday. [/INST] You are a data privacy assistant.
+
+Mask all PII: Records list a contact named [FIRSTNAME] who is coordinating outreach in [STATE]; please sync with the policy team to ensure the right messaging for Monday.</s>",Records list a contact named [FIRSTNAME] who is coordinating outreach in [ADDRESS]; please sync with the policy team to ensure the right messaging for Monday.,"You are a data privacy assistant.
+
+Mask all PII: Records list a contact named [FIRSTNAME] who is coordinating outreach in [STATE]; please sync with the policy team to ensure the right messaging for Monday.",Records list a contact named [FIRSTNAME] who is coordinating outreach in [ADDRESS]; please sync with the policy team to ensure the right messaging for Monday.
+51,Facility access logs show user agent changes around 17:02:11 and email updates from jean.dupont@company.fr during the same window.,Facility access logs show user agent changes around [TIME] and email updates from [EMAIL] during the same window.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Facility access logs show user agent changes around 17:02:11 and email updates from jean.dupont@company.fr during the same window. [/INST] You are a data privacy assistant.
+
+Mask all PII: Facility access logs show user agent changes around [TIME] and email updates from [USERNAME]@company.fr during the same window.</s>",Facility access logs show user agent changes around [TIME] and email updates from [USERNAME]@company.fr during the same window.,"You are a data privacy assistant.
+
+Mask all PII: Facility access logs show user agent changes around [TIME] and email updates from [USERNAME]@company.fr during the same window.",Facility access logs show user agent changes around [TIME] and email updates from [USERNAME]@company.fr during the same window.
+53,"The field team will gather at [-12.0453,-77.0311] before moving to the museum; any late arrivals should ping Kaitlyn at 647 555 0199.",The field team will gather at [NEARBYGPSCOORDINATE] before moving to the museum; any late arrivals should ping [FIRSTNAME] at [PHONENUMBER].,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: The field team will gather at [-12.0453,-77.0311] before moving to the museum; any late arrivals should ping Kaitlyn at 647 555 0199. [/INST] You are a data privacy assistant.
+
+Mask all PII: The field team will gather at [NEARBYGPSCOORDINATE] before moving to the museum; any late arrivals should ping [FIRSTNAME] at [PHONENUMBER].</s>",The field team will gather at [NEARBYGPSCOORDINATE] before moving to the museum; any late arrivals should ping [FIRSTNAME] at [PHONENUMBER].,"You are a data privacy assistant.
+
+Mask all PII: The field team will gather at [NEARBYGPSCOORDINATE] before moving to the museum; any late arrivals should ping [FIRSTNAME] at [PHONENUMBER].",The field team will gather at [NEARBYGPSCOORDINATE] before moving to the museum; any late arrivals should ping [FIRSTNAME] at [PHONENUMBER].
+54,"During systems testing, the VPN client 5C:F3:70:89:AA:10 reconnected repeatedly while the staging node rotated through 203.0.113.45 and 203.0.113.87.","During systems testing, the VPN client [MAC] reconnected repeatedly while the staging node rotated through [IPV4] and [IPV4].","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: During systems testing, the VPN client 5C:F3:70:89:AA:10 reconnected repeatedly while the staging node rotated through 203.0.113.45 and 203.0.113.87. [/INST] You are a data privacy assistant.
+
+Mask all PII: During systems testing, the VPN client [MAC] reconnected repeatedly while the staging node rotated through [IPV4] and [IPV4].</s>","During systems testing, the VPN client [MAC] reconnected repeatedly while the staging node rotated through [IPV4] and [IPV4].","During systems testing, the VPN client [MAC] reconnected repeatedly while the staging node rotated through [IPV4] and [IPV4].","During systems testing, the VPN client [MAC] reconnected repeatedly while the staging node rotated through [IPV4] and [IPV4]."
+55,'Usability operations' requested an internal audit; it should be led by our National Brand Architect and scheduled after cross-checking data in the Administrative Law folder.,'Usability operations' requested an internal audit; it should be led by our [JOBTITLE] and scheduled after cross-checking data in the Administrative Law folder.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Usability operations' requested an internal audit; it should be led by our National Brand Architect and scheduled after cross-checking data in the Administrative Law folder. [/INST] You are a data privacy assistant.
+
+Mask all PII: '[JOBAREA] operations' requested an internal audit; it should be led by our [JOBTITLE] and scheduled after cross-checking data in the Administrative Law folder.</s>",'[JOBAREA] operations' requested an internal audit; it should be led by our [JOBTITLE] and scheduled after cross-checking data in the Administrative Law folder.,"You are a data privacy assistant.
+
+Mask all PII: '[JOBAREA] operations' requested an internal audit; it should be led by our [JOBTITLE] and scheduled after cross-checking data in the Administrative Law folder.",'[JOBAREA] operations' requested an internal audit; it should be led by our [JOBTITLE] and scheduled after cross-checking data in the Administrative Law folder.
+56,"'Parent-teacher meeting' has moved to Veterans Memorial Highway; maps team will publish exact GPS coordinates [41.948,-53.5323] later today.",'Parent-teacher meeting' has moved to [ADDRESS]; maps team will publish exact GPS coordinates [NEARBYGPSCOORDINATE] later today.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Parent-teacher meeting' has moved to Veterans Memorial Highway; maps team will publish exact GPS coordinates [41.948,-53.5323] later today. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Parent-teacher meeting' has moved to [STREET]; maps team will publish exact GPS coordinates [NEARBYGPSCOORDINATE] later today.</s>",'Parent-teacher meeting' has moved to [ADDRESS]; maps team will publish exact GPS coordinates [NEARBYGPSCOORDINATE] later today.,"You are a data privacy assistant.
+
+Mask all PII: 'Parent-teacher meeting' has moved to [STREET]; maps team will publish exact GPS coordinates [NEARBYGPSCOORDINATE] later today.",'Parent-teacher meeting' has moved to [ADDRESS]; maps team will publish exact GPS coordinates [NEARBYGPSCOORDINATE] later today.
+57,"'Emergency supplies in 16356 need a refill' was the note, along with instruction to use 5890724654311332 for payment if cards are accepted.","'Emergency supplies in [ADDRESS] need a refill' was the note, along with instruction to use [MASKEDNUMBER] for payment if cards are accepted.","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Emergency supplies in 16356 need a refill' was the note, along with instruction to use 5890724654311332 for payment if cards are accepted. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Emergency supplies in [ZIPCODE] need a refill' was the note, along with instruction to use [MASKEDNUMBER] for payment if cards are accepted.</s>","'Emergency supplies in [ZIPCODE] need a refill' was the note, along with instruction to use [MASKEDNUMBER] for payment if cards are accepted.","You are a data privacy assistant.
+
+Mask all PII: 'Emergency supplies in [ZIPCODE] need a refill' was the note, along with instruction to use [MASKEDNUMBER] for payment if cards are accepted.","'Emergency supplies in [ZIPCODE] need a refill' was the note, along with instruction to use [MASKEDNUMBER] for payment if cards are accepted."
+59,A student's assessment was left on a device with IMEI 06-184755-866851-3; the document references Optimization curriculum topics and needs collection by EOD.,A student's assessment was left on a device with IMEI [PHONEIMEI]; the document references [JOBAREA] topics and needs collection by EOD.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: A student's assessment was left on a device with IMEI 06-184755-866851-3; the document references Optimization curriculum topics and needs collection by EOD. [/INST] You are a data privacy assistant.
+
+Mask all PII: A student's assessment was left on a device with IMEI [PHONEIMEI]; the document references [JOBAREA] curriculum topics and needs collection by EOD.</s>",A student's assessment was left on a device with IMEI [PHONEIMEI]; the document references [JOBAREA] curriculum topics and needs collection by EOD.,"You are a data privacy assistant.
+
+Mask all PII: A student's assessment was left on a device with IMEI [PHONEIMEI]; the document references [JOBAREA] curriculum topics and needs collection by EOD.",A student's assessment was left on a device with IMEI [PHONEIMEI]; the document references [JOBAREA] curriculum topics and needs collection by EOD.
+60,"Dear Carmen, as our National Brand Architect, please conduct a review using logs from 109.4.61.213 and IPv6 4d36:f8ad:4ebd:1bff:c5eb:62aa:b4d7:dddf; legal will advise on next steps.","Dear [FIRSTNAME], as our [JOBTITLE], please conduct a review using logs from [IPV4] and [IPV6]; legal will advise on next steps.","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Dear Carmen, as our National Brand Architect, please conduct a review using logs from 109.4.61.213 and IPv6 4d36:f8ad:4ebd:1bff:c5eb:62aa:b4d7:dddf; legal will advise on next steps. [/INST] Dear [FIRSTNAME], as our [JOBTITLE], please conduct a review using logs from [IPV4] and IPv6 [IPV6]; legal will advise on next steps.</s>","Dear [FIRSTNAME], as our [JOBTITLE], please conduct a review using logs from [IPV4] and IPv6 [IPV6]; legal will advise on next steps.","Dear [FIRSTNAME], as our [JOBTITLE], please conduct a review using logs from [IPV4] and IPv6 [IPV6]; legal will advise on next steps.","Dear [FIRSTNAME], as our [JOBTITLE], please conduct a review using logs from [IPV4] and IPv6 [IPV6]; legal will advise on next steps."
+61,"City records indicate the family resides at S Broadway 61915 in Port Diegostead near [-56.5612,-68.9245]; please verify Parking Zone C.",City records indicate the family resides at [ADDRESS] in [ADDRESS] near [NEARBYGPSCOORDINATE]; please verify Parking Zone C.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: City records indicate the family resides at S Broadway 61915 in Port Diegostead near [-56.5612,-68.9245]; please verify Parking Zone C. [/INST] You are a data privacy assistant.
+
+Mask all PII: City records indicate the family resides at [STREET] [BUILDINGNUMBER] in [CITY] near [NEARBYGPSCOORDINATE]; please verify Parking Zone C.</s>",City records indicate the family resides at [ADDRESS] [ADDRESS] in [ADDRESS] near [NEARBYGPSCOORDINATE]; please verify Parking Zone C.,"You are a data privacy assistant.
+
+Mask all PII: City records indicate the family resides at [STREET] [BUILDINGNUMBER] in [CITY] near [NEARBYGPSCOORDINATE]; please verify Parking Zone C.",City records indicate the family resides at [ADDRESS] [ADDRESS] in [ADDRESS] near [NEARBYGPSCOORDINATE]; please verify Parking Zone C.
+62,'Workshop host Ms. Rivera (Organizational Psychology)' will circulate prep notes on Friday; remember to attach the revised rubric.,'Workshop host [PREFIX] [LASTNAME] ([JOBAREA])' will circulate prep notes on Friday; remember to attach the revised rubric.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Workshop host Ms. Rivera (Organizational Psychology)' will circulate prep notes on Friday; remember to attach the revised rubric. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Workshop host [PREFIX] [LASTNAME] (Organizational Psychology)' will circulate prep notes on Friday; remember to attach the revised rubric.</s>",'Workshop host [PREFIX] [LASTNAME] (Organizational Psychology)' will circulate prep notes on Friday; remember to attach the revised rubric.,"You are a data privacy assistant.
+
+Mask all PII: 'Workshop host [PREFIX] [LASTNAME] (Organizational Psychology)' will circulate prep notes on Friday; remember to attach the revised rubric.",'Workshop host [PREFIX] [LASTNAME] (Organizational Psychology)' will circulate prep notes on Friday; remember to attach the revised rubric.
+63,'Child's birthday is 05/05/2016' appears on the roster next to classroom code 2B; parents prefer SMS updates.,'Child's birthday is [DOB]' appears on the roster next to classroom code [SECONDARYADDRESS]; parents prefer SMS updates.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Child's birthday is 05/05/2016' appears on the roster next to classroom code 2B; parents prefer SMS updates. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Child's birthday is [DOB]' appears on the roster next to classroom code 2B; parents prefer SMS updates.</s>",'Child's birthday is [DOB]' appears on the roster next to classroom code 2B; parents prefer SMS updates.,"You are a data privacy assistant.
+
+Mask all PII: 'Child's birthday is [DOB]' appears on the roster next to classroom code 2B; parents prefer SMS updates.",'Child's birthday is [DOB]' appears on the roster next to classroom code 2B; parents prefer SMS updates.
+65,"'Return the kit to 12-345 Elm Ave, Springfield' was the courier note, followed by a reminder to hand it to Ms. Patel if someone signs on her behalf.","'Return the kit to [ADDRESS]' was the courier note, followed by a reminder to hand it to [PREFIX] [LASTNAME] if someone signs on her behalf.","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Return the kit to 12-345 Elm Ave, Springfield' was the courier note, followed by a reminder to hand it to Ms. Patel if someone signs on her behalf. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Return the kit to [BUILDINGNUMBER] [STREET], [CITY]' was the courier note, followed by a reminder to hand it to [PREFIX] [LASTNAME] if someone signs on her behalf.</s>","'Return the kit to [ADDRESS] [ADDRESS], [ADDRESS]' was the courier note, followed by a reminder to hand it to [PREFIX] [LASTNAME] if someone signs on her behalf.","You are a data privacy assistant.
+
+Mask all PII: 'Return the kit to [BUILDINGNUMBER] [STREET], [CITY]' was the courier note, followed by a reminder to hand it to [PREFIX] [LASTNAME] if someone signs on her behalf.","'Return the kit to [ADDRESS] [ADDRESS], [ADDRESS]' was the courier note, followed by a reminder to hand it to [PREFIX] [LASTNAME] if someone signs on her behalf."
+66,'Backup archived from 2606:4700:4700::1111 at 05:59' is the last entry before the maintenance crew locked the server room.,'Backup archived from [IPV6] at [TIME]' is the last entry before the maintenance crew locked the server room.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Backup archived from 2606:4700:4700::1111 at 05:59' is the last entry before the maintenance crew locked the server room. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Backup archived from [IPV6] at [TIME]' is the last entry before the maintenance crew locked the server room.</s>",'Backup archived from [IPV6] at [TIME]' is the last entry before the maintenance crew locked the server room.,"You are a data privacy assistant.
+
+Mask all PII: 'Backup archived from [IPV6] at [TIME]' is the last entry before the maintenance crew locked the server room.",'Backup archived from [IPV6] at [TIME]' is the last entry before the maintenance crew locked the server room.
+67,"'Residence: 14 Via Roma, 20100 Milano' was printed on the envelope; confirm the post code and redo the label if needed.",'Residence: [ADDRESS]' was printed on the envelope; confirm the post code and redo the label if needed.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Residence: 14 Via Roma, 20100 Milano' was printed on the envelope; confirm the post code and redo the label if needed. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Residence: [BUILDINGNUMBER] [STREET], [ZIPCODE] [STATE]' was printed on the envelope; confirm the post code and redo the label if needed.</s>","'Residence: [ADDRESS] [ADDRESS], [ZIPCODE] [ADDRESS]' was printed on the envelope; confirm the post code and redo the label if needed.","You are a data privacy assistant.
+
+Mask all PII: 'Residence: [STREET], [ZIPCODE] [STATE]' was printed on the envelope; confirm the post code and redo the label if needed.","'Residence: [ADDRESS], [ZIPCODE] [ADDRESS]' was printed on the envelope; confirm the post code and redo the label if needed."
+68,'Operations hotline +81-3-5321-1234 (Tokyo) remains the only after-hours line' per the last safety memo.,'Operations hotline [PHONENUMBER] ([ADDRESS]) remains the only after-hours line' per the last safety memo.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Operations hotline +81-3-5321-1234 (Tokyo) remains the only after-hours line' per the last safety memo. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Operations hotline [PHONENUMBER] ([STATE]) remains the only after-hours line' per the last safety memo.</s>",'Operations hotline [PHONENUMBER] ([ADDRESS]) remains the only after-hours line' per the last safety memo.,"You are a data privacy assistant.
+
+Mask all PII: 'Operations hotline [PHONENUMBER] ([STATE]) remains the only after-hours line' per the last safety memo.",'Operations hotline [PHONENUMBER] ([ADDRESS]) remains the only after-hours line' per the last safety memo.
+69,'Volunteer roster lists Sarah Nguyen and David Park' for the Saturday event; notify them about the weather plan.,'Volunteer roster lists [FIRSTNAME] [LASTNAME] and [FIRSTNAME] [LASTNAME]' for the Saturday event; notify them about the weather plan.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Volunteer roster lists Sarah Nguyen and David Park' for the Saturday event; notify them about the weather plan. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Volunteer roster lists [FIRSTNAME] [LASTNAME] and [FIRSTNAME] [LASTNAME]' for the Saturday event; notify them about the weather plan.</s>",'Volunteer roster lists [FIRSTNAME] [LASTNAME] and [FIRSTNAME] [LASTNAME]' for the Saturday event; notify them about the weather plan.,"You are a data privacy assistant.
+
+Mask all PII: 'Volunteer roster lists [FIRSTNAME] [LASTNAME] and [FIRSTNAME] [LASTNAME]' for the Saturday event; notify them about the weather plan.",'Volunteer roster lists [FIRSTNAME] [LASTNAME] and [FIRSTNAME] [LASTNAME]' for the Saturday event; notify them about the weather plan.
+71,"'Teacher profile: Mrs. Delgado, Department of Linguistics' should be updated to include the new office hours and room number signage.","'Teacher profile: [PREFIX] [LASTNAME], Department of [JOBAREA]' should be updated to include the new office hours and room number signage.","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Teacher profile: Mrs. Delgado, Department of Linguistics' should be updated to include the new office hours and room number signage. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Teacher profile: [PREFIX] [LASTNAME], Department of Linguistics' should be updated to include the new office hours and room number signage.</s>","'Teacher profile: [PREFIX] [LASTNAME], Department of Linguistics' should be updated to include the new office hours and room number signage.","You are a data privacy assistant.
+
+Mask all PII: 'Teacher profile: [PREFIX] [LASTNAME], Department of Linguistics' should be updated to include the new office hours and room number signage.","'Teacher profile: [PREFIX] [LASTNAME], Department of Linguistics' should be updated to include the new office hours and room number signage."
+72,'Bank transfer BIC: DEUTDEMMXXX received' is stamped on the lower right corner; finance will reconcile after noon.,'Bank transfer BIC: [BIC] received' is stamped on the lower right corner; finance will reconcile after noon.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Bank transfer BIC: DEUTDEMMXXX received' is stamped on the lower right corner; finance will reconcile after noon. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Bank transfer BIC: [BIC] received' is stamped on the lower right corner; finance will reconcile after noon.</s>",'Bank transfer BIC: [BIC] received' is stamped on the lower right corner; finance will reconcile after noon.,"You are a data privacy assistant.
+
+Mask all PII: 'Bank transfer BIC: [BIC] received' is stamped on the lower right corner; finance will reconcile after noon.",'Bank transfer BIC: [BIC] received' is stamped on the lower right corner; finance will reconcile after noon.
+73,'Use wallet bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq for the grant' is written in the notes from the lab manager.,'Use wallet [BITCOINADDRESS] for the grant' is written in the notes from the lab manager.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Use wallet bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq for the grant' is written in the notes from the lab manager. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Use wallet [BITCOINADDRESS] for the grant' is written in the notes from the lab manager.</s>",'Use wallet [BITCOINADDRESS] for the grant' is written in the notes from the lab manager.,"You are a data privacy assistant.
+
+Mask all PII: 'Use wallet [BITCOINADDRESS] for the grant' is written in the notes from the lab manager.",'Use wallet [BITCOINADDRESS] for the grant' is written in the notes from the lab manager.
+74,'Please verify the VIN 1HGCM82633A004352' was attached to the shipping manifest; attach plate photo if available.,'Please verify the VIN [VEHICLEVIN]' was attached to the shipping manifest; attach plate photo if available.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Please verify the VIN 1HGCM82633A004352' was attached to the shipping manifest; attach plate photo if available. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Please verify the VIN [VEHICLEVIN]' was attached to the shipping manifest; attach plate photo if available.</s>",'Please verify the VIN [VEHICLEVIN]' was attached to the shipping manifest; attach plate photo if available.,"You are a data privacy assistant.
+
+Mask all PII: 'Please verify the VIN [VEHICLEVIN]' was attached to the shipping manifest; attach plate photo if available.",'Please verify the VIN [VEHICLEVIN]' was attached to the shipping manifest; attach plate photo if available.
+75,'Debit card 4532-9499-1122-3377 flagged for review' came from the reconciliation queue; mark as investigated once done.,'Debit card [MASKEDNUMBER] flagged for review' came from the reconciliation queue; mark as investigated once done.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Debit card 4532-9499-1122-3377 flagged for review' came from the reconciliation queue; mark as investigated once done. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Debit card [CREDITCARDNUMBER] flagged for review' came from the reconciliation queue; mark as investigated once done.</s>",'Debit card [MASKEDNUMBER] flagged for review' came from the reconciliation queue; mark as investigated once done.,"You are a data privacy assistant.
+
+Mask all PII: 'Debit card [CREDITCARDNUMBER] flagged for review' came from the reconciliation queue; mark as investigated once done.",'Debit card [MASKEDNUMBER] flagged for review' came from the reconciliation queue; mark as investigated once done.
+77,'Admissions page https://intra.docs.local/secure/notes no longer requires VPN' is the note shared by IT; push to the status board.,'Admissions page [URL] no longer requires VPN' is the note shared by IT; push to the status board.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Admissions page https://intra.docs.local/secure/notes no longer requires VPN' is the note shared by IT; push to the status board. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Admissions page [URL] no longer requires VPN' is the note shared by IT; push to the status board.</s>",'Admissions page [URL] no longer requires VPN' is the note shared by IT; push to the status board.,[JOBAREA] page [URL] no longer requires VPN' is the note shared by IT; push to the status board.,[JOBAREA] page [URL] no longer requires VPN' is the note shared by IT; push to the status board.
+78,'Parent email for Ava is ava_parent@example.com; age 7' appears on the roster; move it into the protected field and mask on exports.,'Parent email for [FIRSTNAME] is [EMAIL]; age [AGE]' appears on the roster; move it into the protected field and mask on exports.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Parent email for Ava is ava_parent@example.com; age 7' appears on the roster; move it into the protected field and mask on exports. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Parent email for [FIRSTNAME] is [EMAIL]; age [AGE]' appears on the roster; move it into the protected field and mask on exports.</s>",'Parent email for [FIRSTNAME] is [EMAIL]; age [AGE]' appears on the roster; move it into the protected field and mask on exports.,"You are a data privacy assistant.
+
+Mask all PII: 'Parent email for [FIRSTNAME] is ava_parent@example.com; age [AGE]' appears on the roster; move it into the protected field and mask on exports.",'Parent email for [FIRSTNAME] is ava_parent@example.com; age [AGE]' appears on the roster; move it into the protected field and mask on exports.
+79,'Notify Kaitlyn if the session moves to Thursday' is written next to 647 555 0199; keep the backup contact line below it.,'Notify [FIRSTNAME] if the session moves to Thursday' is written next to [PHONENUMBER]; keep the backup contact line below it.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Notify Kaitlyn if the session moves to Thursday' is written next to 647 555 0199; keep the backup contact line below it. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Notify [FIRSTNAME] if the session moves to Thursday' is written next to [SSN]; keep the backup contact line below it. [PHONENUMBER]</s>",'Notify [FIRSTNAME] if the session moves to Thursday' is written next to [SSN]; keep the backup contact line below it. [PHONENUMBER],"You are a data privacy assistant.
+
+Mask all PII: 'Notify [FIRSTNAME] if the session moves to Thursday' is written next to [SSN]; keep the backup contact line below it. [PHONENUMBER]",'Notify [FIRSTNAME] if the session moves to Thursday' is written next to [SSN]; keep the backup contact line below it. [PHONENUMBER]
+80,"'He resides at 7-11 Orchard Blvd, Singapore' is the landlord note; request a scan of the lease.",'He resides at [ADDRESS]' is the landlord note; request a scan of the lease.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'He resides at 7-11 Orchard Blvd, Singapore' is the landlord note; request a scan of the lease. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'He resides at [STREET], [STATE]' is the landlord note; request a scan of the lease.</s>","'He resides at [ADDRESS], [ADDRESS]' is the landlord note; request a scan of the lease.","You are a data privacy assistant.
+
+Mask all PII: 'He resides at [STREET], [STATE]' is the landlord note; request a scan of the lease.","'He resides at [ADDRESS], [ADDRESS]' is the landlord note; request a scan of the lease."
+81,'Teacher birth date recorded as 1980-12-04' should be stored only in the secure column; remove it from printed rosters.,'Teacher birth date recorded as [DOB]' should be stored only in the secure column; remove it from printed rosters.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Teacher birth date recorded as 1980-12-04' should be stored only in the secure column; remove it from printed rosters. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Teacher birth date recorded as [DOB]' should be stored only in the secure column; remove it from printed rosters.</s>",'Teacher birth date recorded as [DOB]' should be stored only in the secure column; remove it from printed rosters.,"You are a data privacy assistant.
+
+Mask all PII: 'Teacher birth date recorded as [DOB]' should be stored only in the secure column; remove it from printed rosters.",'Teacher birth date recorded as [DOB]' should be stored only in the secure column; remove it from printed rosters.
+83,"'Join the webinar hosted by Innoventive Labs, Paris branch' is on the poster; route questions to the events inbox.","'Join the webinar hosted by [COMPANYNAME], [ADDRESS] branch' is on the poster; route questions to the events inbox.","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Join the webinar hosted by Innoventive Labs, Paris branch' is on the poster; route questions to the events inbox. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Join the webinar hosted by Innoventive Labs, [STATE] branch' is on the poster; route questions to the events inbox.</s>","'Join the webinar hosted by Innoventive Labs, [ADDRESS] branch' is on the poster; route questions to the events inbox.","You are a data privacy assistant.
+
+Mask all PII: 'Join the webinar hosted by Innoventive Labs, [STATE] branch' is on the poster; route questions to the events inbox.","'Join the webinar hosted by Innoventive Labs, [ADDRESS] branch' is on the poster; route questions to the events inbox."
+84,'Admissions will send a welcome email to a.newton@college.ac.uk' per the checklist; archive the ticket once delivered.,'Admissions will send a welcome email to [EMAIL]' per the checklist; archive the ticket once delivered.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Admissions will send a welcome email to a.newton@college.ac.uk' per the checklist; archive the ticket once delivered. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Admissions will send a welcome email to [EMAIL]' per the checklist; archive the ticket once delivered.</s>",'Admissions will send a welcome email to [EMAIL]' per the checklist; archive the ticket once delivered.,"You are a data privacy assistant.
+
+Mask all PII: 'Admissions will send a welcome email to [EMAIL]' per the checklist; archive the ticket once delivered.",'Admissions will send a welcome email to [EMAIL]' per the checklist; archive the ticket once delivered.
+85,"'Return the badge to the desk on Floor 3, Room 305' is printed on the sign; add the after-hours lockbox instructions below it.","'Return the badge to the desk on [SECONDARYADDRESS], [SECONDARYADDRESS]' is printed on the sign; add the after-hours lockbox instructions below it.","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Return the badge to the desk on Floor 3, Room 305' is printed on the sign; add the after-hours lockbox instructions below it. [/INST] Mask all PII: 'Return the badge to the desk on Floor 3, Room 305' is printed on the sign; add the after-hours lockbox instructions below it. [FIRSTNAME] [LASTNAME] [PHONENUMBER] [FIRSTNAME] [LASTNAME] [PHONENUMBER] [FIRSTNAME] [LASTNAME] [PHONENUMBER]</s>","'Return the badge to the desk on Floor 3, Room 305' is printed on the sign; add the after-hours lockbox instructions below it. [FIRSTNAME] [LASTNAME] [PHONENUMBER] [FIRSTNAME] [LASTNAME] [PHONENUMBER] [FIRSTNAME] [LASTNAME] [PHONENUMBER]","You are a data privacy assistant.
+
+Mask all PII: 'Return the badge to the desk on Floor 3, Room 305' is printed on the sign; add the after-hours lockbox instructions below it. [FIRSTNAME] [LASTNAME] [MIDDLENAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME]","'Return the badge to the desk on Floor 3, Room 305' is printed on the sign; add the after-hours lockbox instructions below it. [FIRSTNAME] [LASTNAME] [MIDDLENAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME] [FIRSTNAME] [LASTNAME]"
+86,'He changed his username to benoit_92 last week' appears in the audit log; confirm the owner acknowledges the change.,'He changed his username to [USERNAME] last week' appears in the audit log; confirm the owner acknowledges the change.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'He changed his username to benoit_92 last week' appears in the audit log; confirm the owner acknowledges the change. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'He changed his username to [USERNAME] last week' appears in the audit log; confirm the owner acknowledges the change.</s>",'He changed his username to [USERNAME] last week' appears in the audit log; confirm the owner acknowledges the change.,"You are a data privacy assistant.
+
+Mask all PII: 'He changed his username to [USERNAME] last week' appears in the audit log; confirm the owner acknowledges the change.",'He changed his username to [USERNAME] last week' appears in the audit log; confirm the owner acknowledges the change.
+87,'Upload the draft to https://share.acad.edu/drafts/plan.pdf' was the final instruction from the chair; mark the task complete when done.,'Upload the draft to [URL]' was the final instruction from the chair; mark the task complete when done.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Upload the draft to https://share.acad.edu/drafts/plan.pdf' was the final instruction from the chair; mark the task complete when done. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Upload the draft to [URL]' was the final instruction from the chair; mark the task complete when done.</s>",'Upload the draft to [URL]' was the final instruction from the chair; mark the task complete when done.,"You are a data privacy assistant.
+
+Mask all PII: 'Upload the draft to [URL]' was the final instruction from the chair; mark the task complete when done.",'Upload the draft to [URL]' was the final instruction from the chair; mark the task complete when done.
+89,'Send profile of Mr. Rossi to hr@scuola.it' is on the checklist; add the interview packet for Monday morning.,'Send profile of [PREFIX] [LASTNAME] to [EMAIL]' is on the checklist; add the interview packet for Monday morning.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Send profile of Mr. Rossi to hr@scuola.it' is on the checklist; add the interview packet for Monday morning. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Send profile of [PREFIX] [LASTNAME] to hr@scuola.it' is on the checklist; add the interview packet for Monday morning.</s>",'Send profile of [PREFIX] [LASTNAME] to hr@scuola.it' is on the checklist; add the interview packet for Monday morning.,"You are a data privacy assistant.
+
+Mask all PII: 'Send profile of [PREFIX] [LASTNAME] to hr@scuola.it' is on the checklist; add the interview packet for Monday morning.",'Send profile of [PREFIX] [LASTNAME] to hr@scuola.it' is on the checklist; add the interview packet for Monday morning.
+90,'Use ETH wallet 0x9defd07ced46cbd7bab5fefa53f6f7f5d3da29fe for the grant transaction' was suggested by the finance partner; attach the risk note.,'Use ETH wallet [ETHEREUMADDRESS] for the grant transaction' was suggested by the finance partner; attach the risk note.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Use ETH wallet 0x9defd07ced46cbd7bab5fefa53f6f7f5d3da29fe for the grant transaction' was suggested by the finance partner; attach the risk note. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Use ETH wallet [ETHEREUMADDRESS] for the grant transaction' was suggested by the finance partner; attach the risk note. [RISK] The use of an ETH wallet for grant transactions may expose the recipient's personal information to potential attackers. It is important to ensure that the wallet is securely stored and protected from unauthorized access. Additionally, the use of an ETH wallet for grant transactions may also expose the recipient's financial information to potential attackers. It is important to ensure that the wallet is securely stored and protected from unauthorized access.</s>","'Use ETH wallet [ETHEREUMADDRESS] for the grant transaction' was suggested by the finance partner; attach the risk note. [RISK] The use of an ETH wallet for grant transactions may expose the recipient's personal information to potential attackers. It is important to ensure that the wallet is securely stored and protected from unauthorized access. Additionally, the use of an ETH wallet for grant transactions may also expose the recipient's financial information to potential attackers. It is important to ensure that the wallet is securely stored and protected from unauthorized access.","You are a data privacy assistant.
+
+Mask all PII: 'Use ETH wallet [ETHEREUMADDRESS] for the grant transaction' was suggested by the finance partner; attach the risk note.",'Use ETH wallet [ETHEREUMADDRESS] for the grant transaction' was suggested by the finance partner; attach the risk note.
+91,'Report points to wallet bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh' is cited in the ledger; double-check the compliance checklist before sending.,'Report points to wallet [BITCOINADDRESS]' is cited in the ledger; double-check the compliance checklist before sending.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Report points to wallet bc1qxy2kgdygjrsqtzq2n0yrf2493p83kkfjhx0wlh' is cited in the ledger; double-check the compliance checklist before sending. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Report points to wallet [BITCOINADDRESS]' is cited in the ledger; double-check the compliance checklist before sending.</s>",'Report points to wallet [BITCOINADDRESS]' is cited in the ledger; double-check the compliance checklist before sending.,"You are a data privacy assistant.
+
+Mask all PII: 'Report points to wallet [BITCOINADDRESS]' is cited in the ledger; double-check the compliance checklist before sending.",'Report points to wallet [BITCOINADDRESS]' is cited in the ledger; double-check the compliance checklist before sending.
+92,'Guardian phone on record (07) 3456 1111' should be redacted on the public roster; keep the private copy in the secure folder.,'Guardian phone on record [PHONENUMBER]' should be redacted on the public roster; keep the private copy in the secure folder.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Guardian phone on record (07) 3456 1111' should be redacted on the public roster; keep the private copy in the secure folder. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Guardian phone on record [PHONENUMBER]' should be redacted on the public roster; keep the private copy in the secure folder.</s>",'Guardian phone on record [PHONENUMBER]' should be redacted on the public roster; keep the private copy in the secure folder.,"You are a data privacy assistant.
+
+Mask all PII: 'Guardian phone on record [PHONENUMBER]' should be redacted on the public roster; keep the private copy in the secure folder.",'Guardian phone on record [PHONENUMBER]' should be redacted on the public roster; keep the private copy in the secure folder.
+93,'Parking permit AU62QFT belongs to the van' appears on the clipboard; add the expiration date and garage.,'Parking permit [VEHICLEVRM] belongs to the van' appears on the clipboard; add the expiration date and garage.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Parking permit AU62QFT belongs to the van' appears on the clipboard; add the expiration date and garage. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Parking permit [VEHICLEVRM] belongs to the van' appears on the clipboard; add the expiration date and garage.</s>",'Parking permit [VEHICLEVRM] belongs to the van' appears on the clipboard; add the expiration date and garage.,"You are a data privacy assistant.
+
+Mask all PII: 'Parking permit [VEHICLEVRM] belongs to the van' appears on the clipboard; add the expiration date and garage.",'Parking permit [VEHICLEVRM] belongs to the van' appears on the clipboard; add the expiration date and garage.
+95,'Welcome email goes to nick@startup.io and finance@startup.io' is in the provisioning script; turn off the debug log afterward.,'Welcome email goes to [EMAIL] and [EMAIL]' is in the provisioning script; turn off the debug log afterward.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Welcome email goes to nick@startup.io and finance@startup.io' is in the provisioning script; turn off the debug log afterward. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Welcome email goes to [EMAIL] and finance@startup.io' is in the provisioning script; turn off the debug log afterward.</s>",'Welcome email goes to [EMAIL] and finance@startup.io' is in the provisioning script; turn off the debug log afterward.,"You are a data privacy assistant.
+
+Mask all PII: 'Welcome email goes to [EMAIL] and finance@startup.io' is in the provisioning script; turn off the debug log afterward.",'Welcome email goes to [EMAIL] and finance@startup.io' is in the provisioning script; turn off the debug log afterward.
+96,'Use the notes at https://schooldistrict.example/parents' is on the parent help card; translate it into Spanish for the front desk.,'Use the notes at [URL]' is on the parent help card; translate it into Spanish for the front desk.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Use the notes at https://schooldistrict.example/parents' is on the parent help card; translate it into Spanish for the front desk. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Use the notes at [URL] parents' is on the parent help card; translate it into Spanish for the front desk. [SPANISH] Use the notes at [URL] parents'</s>",'Use the notes at [URL] parents' is on the parent help card; translate it into Spanish for the front desk. [SPANISH] Use the notes at [URL] parents',"You are a data privacy assistant.
+
+Mask all PII: 'Use the notes at [URL]' is on the parent help card; translate it into Spanish for the front desk. [SPANISH] 'Use the notes at [URL]'",'Use the notes at [URL]' is on the parent help card; translate it into Spanish for the front desk. [SPANISH] 'Use the notes at [URL]'
+97,"'Coach: Mr. Blake, Role: Athletics Lead' is on the bulletin board; add the tournament dates underneath.","'Coach: [PREFIX] [LASTNAME], Role: [JOBTITLE]' is on the bulletin board; add the tournament dates underneath.","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Coach: Mr. Blake, Role: Athletics Lead' is on the bulletin board; add the tournament dates underneath. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Coach: [PREFIX] [MIDDLENAME], Role: Athletics Lead' is on the bulletin board; add the tournament dates underneath.</s>","'Coach: [PREFIX] [MIDDLENAME], Role: Athletics Lead' is on the bulletin board; add the tournament dates underneath.","You are a data privacy assistant.
+
+Mask all PII: 'Coach: [PREFIX] [MIDDLENAME], Role: Athletics Lead' is on the bulletin board; add the tournament dates underneath.","'Coach: [PREFIX] [MIDDLENAME], Role: Athletics Lead' is on the bulletin board; add the tournament dates underneath."
+98,'Guardian gender: Intersex and preferred height record 158 cm' was captured incorrectly; correct the data entry.,'Guardian gender: [GENDER] and preferred height record [HEIGHT]' was captured incorrectly; correct the data entry.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Guardian gender: Intersex and preferred height record 158 cm' was captured incorrectly; correct the data entry. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Guardian gender: [GENDER] and preferred height record [HEIGHT]' was captured incorrectly; correct the data entry.</s>",'Guardian gender: [GENDER] and preferred height record [HEIGHT]' was captured incorrectly; correct the data entry.,"You are a data privacy assistant.
+
+Mask all PII: 'Guardian gender: [GENDER] and preferred height record [HEIGHT]' was captured incorrectly; correct the data entry.",'Guardian gender: [GENDER] and preferred height record [HEIGHT]' was captured incorrectly; correct the data entry.
+99,'Email careers@acme-industries.co for the internship' appears at the bottom of the flyer; ensure the QR code resolves too.,'Email [EMAIL] for the internship' appears at the bottom of the flyer; ensure the QR code resolves too.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Email careers@acme-industries.co for the internship' appears at the bottom of the flyer; ensure the QR code resolves too. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Email careers@acme-industries.co for the internship' appears at the bottom of the flyer; ensure the QR code resolves too.</s>",'Email careers@acme-industries.co for the internship' appears at the bottom of the flyer; ensure the QR code resolves too.,"You are a data privacy assistant.
+
+Mask all PII: 'Email careers@acme-industries.co for the internship' appears at the bottom of the flyer; ensure the QR code resolves too.",'Email careers@acme-industries.co for the internship' appears at the bottom of the flyer; ensure the QR code resolves too.
+101,'Use 215.114.180.213 for secure replication' was a leftover from staging; replace it with the production entry and clear the cache.,'Use [IPV4] for secure replication' was a leftover from staging; replace it with the production entry and clear the cache.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Use 215.114.180.213 for secure replication' was a leftover from staging; replace it with the production entry and clear the cache. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Use [IPV4] for secure replication' was a leftover from staging; replace it with the production entry and clear the cache.</s>",'Use [IPV4] for secure replication' was a leftover from staging; replace it with the production entry and clear the cache.,"You are a data privacy assistant.
+
+Mask all PII: 'Use [IPV4] for secure replication' was a leftover from staging; replace it with the production entry and clear the cache.",'Use [IPV4] for secure replication' was a leftover from staging; replace it with the production entry and clear the cache.
+102,'Ping the on-call SRE using +49 30 1234567' was appended to the runbook; add the slack channel under it.,'Ping the on-call SRE using [PHONENUMBER]' was appended to the runbook; add the slack channel under it.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Ping the on-call SRE using +49 30 1234567' was appended to the runbook; add the slack channel under it. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Ping the on-call SRE using [PHONENUMBER]' was appended to the runbook; add the slack channel under it.</s>",'Ping the on-call SRE using [PHONENUMBER]' was appended to the runbook; add the slack channel under it.,"You are a data privacy assistant.
+
+Mask all PII: 'Ping the on-call SRE using [PHONENUMBER]' was appended to the runbook; add the slack channel under it.",'Ping the on-call SRE using [PHONENUMBER]' was appended to the runbook; add the slack channel under it.
+103,'Please pay with Mastercard 5275 1045 1111 9090' remains visible in the PDF export; redact before sending to vendors.,'Please pay with [MASKEDNUMBER]' remains visible in the PDF export; redact before sending to vendors.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Please pay with Mastercard 5275 1045 1111 9090' remains visible in the PDF export; redact before sending to vendors. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Please pay with Mastercard [CREDITCARDCVV] [CREDITCARDNUMBER]' remains visible in the PDF export; redact before sending to vendors.</s>",'Please pay with Mastercard [MASKEDNUMBER] [MASKEDNUMBER]' remains visible in the PDF export; redact before sending to vendors.,"You are a data privacy assistant.
+
+Mask all PII: 'Please pay with Mastercard [CREDITCARDCVV] [CREDITCARDNUMBER]' remains visible in the PDF export; redact before sending to vendors.",'Please pay with Mastercard [MASKEDNUMBER] [MASKEDNUMBER]' remains visible in the PDF export; redact before sending to vendors.
+104,'New grad orientation led by Ms. Wang at 08:15' is confirmed; add the room number to the announcement.,'New grad orientation led by [PREFIX] [LASTNAME] at [TIME]' is confirmed; add the room number to the announcement.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'New grad orientation led by Ms. Wang at 08:15' is confirmed; add the room number to the announcement. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'New grad orientation led by [PREFIX] [LASTNAME] at [TIME]' is confirmed; add the room number to the announcement.</s>",'New grad orientation led by [PREFIX] [LASTNAME] at [TIME]' is confirmed; add the room number to the announcement.,"You are a data privacy assistant.
+
+Mask all PII: 'New grad orientation led by [PREFIX] [LASTNAME] at [TIME]' is confirmed; add the room number to the announcement.",'New grad orientation led by [PREFIX] [LASTNAME] at [TIME]' is confirmed; add the room number to the announcement.
+105,'Send a summary to t.kato@pref.osaka.jp by 16:30' comes from the task list; mark the status after upload.,'Send a summary to [EMAIL] by [TIME]' comes from the task list; mark the status after upload.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Send a summary to t.kato@pref.osaka.jp by 16:30' comes from the task list; mark the status after upload. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Send a summary to [EMAIL] by [TIME]' comes from the task list; mark the status after upload.</s>",'Send a summary to [EMAIL] by [TIME]' comes from the task list; mark the status after upload.,"You are a data privacy assistant.
+
+Mask all PII: 'Send a summary to [EMAIL] by [TIME]' comes from the task list; mark the status after upload.",'Send a summary to [EMAIL] by [TIME]' comes from the task list; mark the status after upload.
+107,"'The applicant, Joon Park, prefers they/them pronouns' is captured in the personal statement; keep the phrasing intact but mask the identity in exports.","'The applicant, [FIRSTNAME] [LASTNAME], prefers [GENDER] pronouns' is captured in the personal statement; keep the phrasing intact but mask the identity in exports.","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'The applicant, Joon Park, prefers they/them pronouns' is captured in the personal statement; keep the phrasing intact but mask the identity in exports. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'The applicant, [FIRSTNAME] [LASTNAME], prefers they/them pronouns' is captured in the personal statement; keep the phrasing intact but mask the identity in exports.</s>","'The applicant, [FIRSTNAME] [LASTNAME], prefers they/them pronouns' is captured in the personal statement; keep the phrasing intact but mask the identity in exports.","You are a data privacy assistant.
+
+Mask all PII: 'The applicant, [FIRSTNAME] [LASTNAME], prefers they/them pronouns' is captured in the personal statement; keep the phrasing intact but mask the identity in exports.","'The applicant, [FIRSTNAME] [LASTNAME], prefers they/them pronouns' is captured in the personal statement; keep the phrasing intact but mask the identity in exports."
+108,"'Welcome kit for Julia Alvarez' should be delivered to 2125 Willow Creek Blvd, Denver, CO 80203 before noon; ring the bell twice.",'Welcome kit for [FIRSTNAME] [LASTNAME]' should be delivered to [ADDRESS] before noon; ring the bell twice.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Welcome kit for Julia Alvarez' should be delivered to 2125 Willow Creek Blvd, Denver, CO 80203 before noon; ring the bell twice. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Welcome kit for [FIRSTNAME] [LASTNAME]' should be delivered to [BUILDINGNUMBER] [STREET], [CITY], CO [ZIPCODE] before noon; ring the bell twice.</s>","'Welcome kit for [FIRSTNAME] [LASTNAME]' should be delivered to [ADDRESS] [ADDRESS], [ADDRESS], CO [ZIPCODE] before noon; ring the bell twice.","You are a data privacy assistant.
+
+Mask all PII: 'Welcome kit for [FIRSTNAME] [LASTNAME]' should be delivered to [BUILDINGNUMBER] [STREET], [CITY], CO [ZIPCODE] before noon; ring the bell twice.","'Welcome kit for [FIRSTNAME] [LASTNAME]' should be delivered to [ADDRESS] [ADDRESS], [ADDRESS], CO [ZIPCODE] before noon; ring the bell twice."
+109,'We met Joseph and Amina at the campus cafe' appears in the group notes; remove first names from the public summary.,'We met [FIRSTNAME] and [FIRSTNAME] at the campus cafe' appears in the group notes; remove first names from the public summary.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'We met Joseph and Amina at the campus cafe' appears in the group notes; remove first names from the public summary. [/INST] We met [FIRSTNAME] and [FIRSTNAME] at the campus cafe' appears in the group notes; remove first names from the public summary.</s>",We met [FIRSTNAME] and [FIRSTNAME] at the campus cafe' appears in the group notes; remove first names from the public summary.,"You are a data privacy assistant.
+
+Mask all PII: 'We met [FIRSTNAME] and [FIRSTNAME] at the campus cafe' appears in the group notes; remove first names from the public summary.",'We met [FIRSTNAME] and [FIRSTNAME] at the campus cafe' appears in the group notes; remove first names from the public summary.
+110,'Guardian email for Ava is ava_parent@example.com; call at 09:45 AM if forms are missing' is on the roster; keep it in the secure notes.,'Guardian email for [FIRSTNAME] is [EMAIL]; call at [TIME] if forms are missing' is on the roster; keep it in the secure notes.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'Guardian email for Ava is ava_parent@example.com; call at 09:45 AM if forms are missing' is on the roster; keep it in the secure notes. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'Guardian email for [FIRSTNAME] is ava_parent@example.com; call at [TIME] if forms are missing' is on the roster; keep it in the secure notes.</s>",'Guardian email for [FIRSTNAME] is ava_parent@example.com; call at [TIME] if forms are missing' is on the roster; keep it in the secure notes.,"You are a data privacy assistant.
+
+Mask all PII: 'Guardian email for [FIRSTNAME] is ava_parent@example.com; call at [TIME] if forms are missing' is on the roster; keep it in the secure notes.",'Guardian email for [FIRSTNAME] is ava_parent@example.com; call at [TIME] if forms are missing' is on the roster; keep it in the secure notes.
+111,'He will drive vehicle UCF7MLHJ8ZK266446 to the clinic' is in the staff text; attach the parking instructions for the east lot.,'He will drive vehicle [VEHICLEVIN] to the clinic' is in the staff text; attach the parking instructions for the [ORDINALDIRECTION] lot.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: 'He will drive vehicle UCF7MLHJ8ZK266446 to the clinic' is in the staff text; attach the parking instructions for the east lot. [/INST] You are a data privacy assistant.
+
+Mask all PII: 'He will drive vehicle [VEHICLEVIN] to the clinic' is in the staff text; attach the parking instructions for the east lot.</s>",'He will drive vehicle [VEHICLEVIN] to the clinic' is in the staff text; attach the parking instructions for the east lot.,"You are a data privacy assistant.
+
+Mask all PII: 'He will drive vehicle [VEHICLEVIN] to the clinic' is in the staff text; attach the parking instructions for the east lot.",'He will drive vehicle [VEHICLEVIN] to the clinic' is in the staff text; attach the parking instructions for the east lot.
+113,Reminder: interview with Ms. Thompson at 2:00 PM on 14/02/2022.,Reminder: interview with [PREFIX] [LASTNAME] at [TIME] on [DATE].,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Reminder: interview with Ms. Thompson at 2:00 PM on 14/02/2022. [/INST] You are a data privacy assistant.
+
+Mask all PII: Reminder: interview with [PREFIX] [LASTNAME] at [TIME] on [DATE].</s>",Reminder: interview with [PREFIX] [LASTNAME] at [TIME] on [DATE].,"You are a data privacy assistant.
+
+Mask all PII: Reminder: interview with [PREFIX] [LASTNAME] at [TIME] on [DATE].",Reminder: interview with [PREFIX] [LASTNAME] at [TIME] on [DATE].
+114,Send the offer to careers@acme-industries.co and cc the hiring manager.,Send the offer to [EMAIL] and cc the hiring manager.,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Send the offer to careers@acme-industries.co and cc the hiring manager. [/INST] You are a data privacy assistant.
+
+Mask all PII: Send the offer to careers@acme-industries.co and cc the hiring manager.</s>",Send the offer to careers@acme-industries.co and cc the hiring manager.,"You are a data privacy assistant.
+
+Mask all PII: Send the offer to careers@acme-industries.co and cc the hiring manager.",Send the offer to careers@acme-industries.co and cc the hiring manager.
+115,Parent portal shows DOB for Emma: 2009-08-21.,Parent portal shows DOB for [FIRSTNAME]: [DOB].,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Parent portal shows DOB for Emma: 2009-08-21. [/INST] You are a data privacy assistant.
+
+Mask all PII: Parent portal shows DOB for [FIRSTNAME]: [DOB].</s>",Parent portal shows DOB for [FIRSTNAME]: [DOB].,"You are a data privacy assistant.
+
+Mask all PII: Parent portal shows DOB for [FIRSTNAME]: [DOB].",Parent portal shows DOB for [FIRSTNAME]: [DOB].
+116,Credentials leaked: pw=V7mZq_44! and username: alex.t.,Credentials leaked: pw=[PASSWORD] and username: [USERNAME].,"<s>[INST] You are a data privacy assistant.
+
+Mask all PII: Credentials leaked: pw=V7mZq_44! and username: alex.t. [/INST] You are a data privacy assistant.
+
+Mask all PII: Credentials leaked: pw=[PASSWORD]! and username: [USERNAME].</s>",Credentials leaked: pw=[PASSWORD]! and username: [USERNAME].,"You are a data privacy assistant.
+
+Mask all PII: Credentials leaked: pw=[PASSWORD]! and username: [USERNAME].",Credentials leaked: pw=[PASSWORD]! and username: [USERNAME].
+117,"We booked your rental in Phoenix, Arizona for next week.","We booked your rental in [ADDRESS], [ADDRESS] for next week.","<s>[INST] You are a data privacy assistant.
+
+Mask all PII: We booked your rental in Phoenix, Arizona for next week. [/INST] You are a data privacy assistant.
+
+Mask all PII: We booked your rental in [CITY], [STATE] for next week.</s>","We booked your rental in [ADDRESS], [ADDRESS] for next week.","We booked your rental in [CITY], [STATE] for next week.","We booked your rental in [ADDRESS], [ADDRESS] for next week."
