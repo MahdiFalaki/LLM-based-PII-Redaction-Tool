@@ -199,9 +199,10 @@ ${PROJECT_ROOT}
    * Output: [FIRSTNAME] [LASTNAME] lives at [ADDRESS]. His credit card number is [MASKEDNUMBER].
 ```
 
-## 📊 Results (100-sample evaluation)
+## 📊 Results (100 generic unseen samples evaluation)
 
-*Will be updated soon ...*
+![HF Model ](pii_masking/scripts/eval/eval_synthetic/confusion_hf.png)
+![GGFU Model](pii_masking/scripts/eval/eval_synthetic/confusion_gguf.png)
 
 ## 🛠 Post-Processing Rules
 
