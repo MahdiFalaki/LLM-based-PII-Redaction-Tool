@@ -2,6 +2,8 @@
 
 This project fine-tunes [mistralai/Mistral-7B-Instruct-v0.2](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2) on the [ai4privacy/pii-masking-200k](https://huggingface.co/datasets/ai4privacy/pii-masking-200k) dataset to **redact sensitive information (PII)**. It supports both **GPU inference (merged Hugging Face model)** and **CPU inference demo-only (quantized GGUF model via llama.cpp)**, with post-processing for consistent normalization of entity tags. 
 
+🚀 [Live Quantized Model Demo on Hugging Face Spaces](https://huggingface.co/spaces/yourname/pii-masking)
+
 --- 
 
 ## 🚀 Motivation 
