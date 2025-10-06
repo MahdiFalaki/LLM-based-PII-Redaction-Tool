@@ -37,9 +37,7 @@ Handling sensitive data securely is critical. Off-the-shelf LLMs are not optimiz
 4. **Environment**
 
 ```
-  conda create -n redaction python=3.11
-  conda activate redaction
-pip install -r requirements.txt
+   conda env create -f environment.yml
 ```
 
 2. **Preprocess & Train**
