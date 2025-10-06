@@ -83,6 +83,22 @@ Handling sensitive data securely is critical. Off-the-shelf LLMs are not optimiz
    * Input: John Smith lives at 123 Main Street, Toronto. His credit card number is 4532 9483 0294 5521.
    * Output: [FIRSTNAME] [LASTNAME] lives at [ADDRESS]. His credit card number is [MASKEDNUMBER].
 ```
+---
+
+## 📊 Results (100 generic unseen samples evaluation)
+
+<table align="center">
+  <tr>
+    <td align="center" width="50%">
+      <img src="pii_masking/scripts/eval/eval_synthetic/confusion_hf.png" width="95%"/><br>
+      <sub><b>HF Model Confusion Matrix Heatmap</b></sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="pii_masking/scripts/eval/eval_synthetic/confusion_gguf.png" width="95%"/><br>
+      <sub><b>GGUF Model Confusion Matrix Heatmap</b></sub>
+    </td>
+  </tr>
+</table>
 
 --- 
 
@@ -130,23 +146,6 @@ Handling sensitive data securely is critical. Off-the-shelf LLMs are not optimiz
    Compare GPU vs CPU outputs on 100 random samples using scripts/eval/run_eval.py. Metrics include confusion matrices and macro Precision/Recall/F1.
 
 --- 
-
-## 📊 Results (100 generic unseen samples evaluation)
-
-<table align="center">
-  <tr>
-    <td align="center" width="50%">
-      <img src="pii_masking/scripts/eval/eval_synthetic/confusion_hf.png" width="95%"/><br>
-      <sub><b>HF Model Confusion Matrix Heatmap</b></sub>
-    </td>
-    <td align="center" width="50%">
-      <img src="pii_masking/scripts/eval/eval_synthetic/confusion_gguf.png" width="95%"/><br>
-      <sub><b>GGUF Model Confusion Matrix Heatmap</b></sub>
-    </td>
-  </tr>
-</table>
-
----
 
 **📂 Repository Layout**
 
