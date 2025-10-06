@@ -8,6 +8,77 @@ This project fine-tunes [mistralai/Mistral-7B-Instruct-v0.2](https://huggingface
 
 Handling sensitive data securely is critical. Off-the-shelf LLMs are not optimized for **structured text redaction** (names, addresses, phone numbers, credit cards, etc.). This project builds a reproducible pipeline for **finetuning, merging, quantization, inference, and evaluation**, producing a lightweight model ready for real-world redaction tasks. 
 
+---
+
+## ⚡ Quick Start
+
+0. **Prerequisites**
+
+* A Hugging Face access token for Mistral Model.
+
+```
+   export HF_TOKEN="hf_XXXXXXXXXXXXXXXXXXXXXXXX"
+```
+
+2. **Clone Axolotl**
+
+```
+   # Clone Axolotl
+   git clone https://github.com/axolotl-ai-cloud/axolotl.git
+   cd axolotl/examples
+   
+   # Clone this repo INTO the examples directory (name it pii_masking)
+   git clone https://github.com/MahdiFalaki/LLM-based-PII-Redaction-Tool.git pii_masking
+   
+   # Work inside the project directory
+   cd pii_masking
+```
+
+4. **Environment**
+
+```
+  conda create -n redaction python=3.11
+  conda activate redaction
+pip install -r requirements.txt
+```
+
+2. **Preprocess & Train**
+ 
+```
+   bash scripts/train/train_full.sh
+```
+
+3. **Merge LoRA**
+
+```
+   python tools/merge.py
+```
+
+4. **Convert & Quantize**
+
+```
+   git clone https://github.com/ggerganov/llama.cpp cd llama.cpp && cmake -B build && cmake --build build -j && cd ..
+   python llama.cpp/convert_hf_to_gguf.py outputs/pii_masking_mistral/merged_pii_model --outfile merged-gguf/mistral7b-redact-f16.gguf
+   llama.cpp/build/bin/quantize merged-gguf/mistral7b-redact-f16.gguf merged-gguf/mistral7b-redact-Q4_K_M.gguf Q4_K_M
+```
+
+5. **Inference**
+
+   * GPU:
+```
+   python apps/hf_demo.py
+```
+   * CPU (Quantized GGUF):
+```
+   python apps/pii_app.py
+```
+
+6. **Evaluation**
+
+```
+   bash evaluate_100.sh
+```
+
 --- 
 
 ## 🔄 Workflow 
@@ -122,75 +193,6 @@ ${PROJECT_ROOT}
 ⚠️ The HF Space demo is much slower and slightly less accurate. For original performance, run the GPU merged model locally instead. The CPU model is for the demo-only.
 
 --- 
-
-## ⚡ Quick Start
-
-0. **Prerequisites**
-
-* A Hugging Face access token for Mistral Model.
-
-```
-   export HF_TOKEN="hf_XXXXXXXXXXXXXXXXXXXXXXXX"
-```
-
-2. **Clone Axolotl**
-
-```
-   # Clone Axolotl
-   git clone https://github.com/axolotl-ai-cloud/axolotl.git
-   cd axolotl/examples
-   
-   # Clone this repo INTO the examples directory (name it pii_masking)
-   git clone https://github.com/MahdiFalaki/LLM-based-PII-Redaction-Tool.git pii_masking
-   
-   # Work inside the project directory
-   cd pii_masking
-```
-
-4. **Environment**
-
-```
-  conda create -n redaction python=3.11
-  conda activate redaction
-pip install -r requirements.txt
-```
-
-2. **Preprocess & Train**
- 
-```
-   bash scripts/train/train_full.sh
-```
-
-3. **Merge LoRA**
-
-```
-   python tools/merge.py
-```
-
-4. **Convert & Quantize**
-
-```
-   git clone https://github.com/ggerganov/llama.cpp cd llama.cpp && cmake -B build && cmake --build build -j && cd ..
-   python llama.cpp/convert_hf_to_gguf.py outputs/pii_masking_mistral/merged_pii_model --outfile merged-gguf/mistral7b-redact-f16.gguf
-   llama.cpp/build/bin/quantize merged-gguf/mistral7b-redact-f16.gguf merged-gguf/mistral7b-redact-Q4_K_M.gguf Q4_K_M
-```
-
-5. **Inference**
-
-   * GPU:
-```
-   python apps/hf_demo.py
-```
-   * CPU (Quantized GGUF):
-```
-   python apps/pii_app.py
-```
-
-6. **Evaluation**
-
-```
-   bash evaluate_100.sh
-```
 
 ## ✨ Example
 
