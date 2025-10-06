@@ -8,131 +8,6 @@ This project fine-tunes [mistralai/Mistral-7B-Instruct-v0.2](https://huggingface
 
 Handling sensitive data securely is critical. Off-the-shelf LLMs are not optimized for **structured text redaction** (names, addresses, phone numbers, credit cards, etc.). This project builds a reproducible pipeline for **finetuning, merging, quantization, inference, and evaluation**, producing a lightweight model ready for real-world redaction tasks. 
 
----
-
-**📂 Repository Layout**
-
-```
-${PROJECT_ROOT}
-
-   -- config
-     |-- pii_config.yml
-     |-- __init__.py
-     |-- config.py
-
-   -- data
-     |-- pii_mask.jsonl -- merged-gguf
-     |-- mistral7b-redact-f16.gguf
-     |-- mistral7b-redact-Q4_K_M.gguf
-
-   -- scripts
-
-     -- train
-       |-- convert_pii_dataset.py
-       |-- axolotl_train.py
-
-     -- infer
-       |-- gguf_infer.py
-       |-- hf_infer.py
-
-     -- eval
-       |-- run_eval.py
-       |-- metrics.py
-       |-- evaluate_100.sh
-       |-- data.py
-
-     -- utils
-       |-- post_processing.py
-       |-- ref_normalize.py
-       |-- prompting.py
-
-     -- tools
-       |-- convert_to_gguf.sh
-       |-- merge.py
-
-   -- compare_cli.py
-   -- evaluate_100.sh
-```
-
---- 
-
-## ⚡ Quick Start
-
-1. **Environment**
-
-```
-  conda create -n redaction python=3.11
-  conda activate redaction pip install -r requirements.txt
-```
-
-2. **Preprocess & Train**
- 
-```
-   bash scripts/train/train_full.sh
-```
-
-3. **Merge LoRA**
-
-```
-   python tools/merge.py
-```
-
-4. **Convert & Quantize**
-
-```
-   git clone https://github.com/ggerganov/llama.cpp cd llama.cpp && cmake -B build && cmake --build build -j && cd ..
-   python llama.cpp/convert_hf_to_gguf.py outputs/pii_masking_mistral/merged_pii_model --outfile merged-gguf/mistral7b-redact-f16.gguf
-   llama.cpp/build/bin/quantize merged-gguf/mistral7b-redact-f16.gguf merged-gguf/mistral7b-redact-Q4_K_M.gguf Q4_K_M
-```
-
-5. **Inference**
-
-* GPU:
-```
-   python apps/hf_demo.py
-```
-* CPU (Quantized GGUF):
-```
-   python apps/pii_app.py
-```
-
-6. **Evaluation**
-
-```
-   bash evaluate_100.sh
-```
-
-## ✨ Example
-
-```
-   * Input: John Smith lives at 123 Main Street, Toronto. His credit card number is 4532 9483 0294 5521.
-   * Output: [FIRSTNAME] [LASTNAME] lives at [ADDRESS]. His credit card number is [MASKEDNUMBER].
-```
-
---- 
-
-
-## GPU vs CPU Models
-   This repository provides two ways to run the model:
-   
-   * *GPU (HF Transformers, merged model)*
-   
-     * Best performance (accuracy + speed).
-      
-     * Requires CUDA and enough VRAM.
-      
-     * Recommended for production use.
-   
-   * *CPU (Quantized GGUF via llama.cpp)*
-   
-     * Lower performance due to quantization + CPU-only execution.
-      
-     * Enables running the model in lightweight environments.
-      
-     * Used for the Hugging Face Space demo, which is CPU-only.
-   
-⚠️ The HF Space demo is much slower and slightly less accurate. For original performance, run the GPU merged model locally instead. The CPU model is for the demo-only.
-
 --- 
 
 ## 🔄 Workflow 
@@ -180,19 +55,163 @@ ${PROJECT_ROOT}
 
 --- 
 
+**📂 Repository Layout**
+
+```
+${PROJECT_ROOT}
+
+   -- config
+     |-- pii_config.yml
+     |-- config.py
+
+   -- data
+     |-- pii_mask.jsonl -- merged-gguf
+     |-- mistral7b-redact-f16.gguf
+     |-- mistral7b-redact-Q4_K_M.gguf
+
+   -- scripts
+
+     -- train
+       |-- convert_pii_dataset.py
+       |-- axolotl_train.py
+
+     -- infer
+       |-- gguf_infer.py
+       |-- hf_infer.py
+
+     -- eval
+       |-- run_eval.py
+       |-- metrics.py
+       |-- evaluate_100.sh
+       |-- data.py
+
+     -- utils
+       |-- post_processing.py
+       |-- ref_normalize.py
+       |-- prompting.py
+
+     -- tools
+       |-- convert_to_gguf.sh
+       |-- merge.py
+
+   -- compare_cli.py
+   -- evaluate_100.sh
+```
+
+--- 
+
+## GPU vs CPU Models
+   This repository provides two ways to run the model:
+   
+   * *GPU (HF Transformers, merged model)*
+   
+     * Best performance (accuracy + speed).
+      
+     * Requires CUDA and enough VRAM.
+      
+     * Recommended for production use.
+   
+   * *CPU (Quantized GGUF via llama.cpp)*
+   
+     * Lower performance due to quantization + CPU-only execution.
+      
+     * Enables running the model in lightweight environments.
+      
+     * Used for the Hugging Face Space demo, which is CPU-only.
+   
+⚠️ The HF Space demo is much slower and slightly less accurate. For original performance, run the GPU merged model locally instead. The CPU model is for the demo-only.
+
+--- 
+
+## ⚡ Quick Start
+
+0. **Prerequisites**
+
+* A Hugging Face access token for Mistral Model.
+
+```
+   export HF_TOKEN="hf_XXXXXXXXXXXXXXXXXXXXXXXX"
+```
+
+2. **Clone Axolotl**
+
+```
+   # Clone Axolotl
+   git clone https://github.com/axolotl-ai-cloud/axolotl.git
+   cd axolotl/examples
+   
+   # Clone this repo INTO the examples directory (name it pii_masking)
+   git clone https://github.com/MahdiFalaki/LLM-based-PII-Redaction-Tool.git pii_masking
+   
+   # Work inside the project directory
+   cd pii_masking
+```
+
+4. **Environment**
+
+```
+  conda create -n redaction python=3.11
+  conda activate redaction
+pip install -r requirements.txt
+```
+
+2. **Preprocess & Train**
+ 
+```
+   bash scripts/train/train_full.sh
+```
+
+3. **Merge LoRA**
+
+```
+   python tools/merge.py
+```
+
+4. **Convert & Quantize**
+
+```
+   git clone https://github.com/ggerganov/llama.cpp cd llama.cpp && cmake -B build && cmake --build build -j && cd ..
+   python llama.cpp/convert_hf_to_gguf.py outputs/pii_masking_mistral/merged_pii_model --outfile merged-gguf/mistral7b-redact-f16.gguf
+   llama.cpp/build/bin/quantize merged-gguf/mistral7b-redact-f16.gguf merged-gguf/mistral7b-redact-Q4_K_M.gguf Q4_K_M
+```
+
+5. **Inference**
+
+   * GPU:
+```
+   python apps/hf_demo.py
+```
+   * CPU (Quantized GGUF):
+```
+   python apps/pii_app.py
+```
+
+6. **Evaluation**
+
+```
+   bash evaluate_100.sh
+```
+
+## ✨ Example
+
+```
+   * Input: John Smith lives at 123 Main Street, Toronto. His credit card number is 4532 9483 0294 5521.
+   * Output: [FIRSTNAME] [LASTNAME] lives at [ADDRESS]. His credit card number is [MASKEDNUMBER].
+```
+
 ## 📊 Results (100-sample evaluation)
 
 *Will be updated soon ...*
 
 ## 🛠 Post-Processing Rules
 
-   * *Canonicalize tags* → unify casing/variants
+   * Canonicalize tags* → unify casing/variants
 
-   * *Collapse addresses* → [BUILDINGNUMBER] [STREET] [CITY] → [ADDRESS]
+   * Collapse addresses* → [BUILDINGNUMBER] [STREET] [CITY] → [ADDRESS]
 
-   * *Credit card override* → detect 13–19 digit sequences and normalize to [MASKEDNUMBER]
+   * Credit card override* → detect 13–19 digit sequences and normalize to [MASKEDNUMBER]
 
-   * *Reduce tag space* → CITY/STATE → [ADDRESS]
+   * Reduce tag space* → CITY/STATE → [ADDRESS]
 
 ## 🗺 Roadmap
 
