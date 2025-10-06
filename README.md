@@ -126,26 +126,26 @@ ${PROJECT_ROOT}
   accelerate launch -m axolotl.cli.train config/pii_config.yml
 ```
 
-5. **Merge LoRA**
+3. **Merge LoRA**
 
 ```
   python scripts/train/merge.py
 ```
 
-7. **Convert & Quantize**
+4. **Convert & Quantize**
 
 ```
   git clone https://github.com/ggerganov/llama.cpp cd llama.cpp && cmake -B build && cmake --build build -j && cd ..
   python llama.cpp/convert_hf_to_gguf.py outputs/pii_masking_mistral/merged_pii_model --outfile merged-gguf/mistral7b-redact-f16.gguf llama.cpp/build/bin/quantize merged-gguf/mistral7b-redact-f16.gguf merged-gguf/mistral7b-redact-Q4_K_M.gguf Q4_K_M
 ```
 
-9. **Inference**
+5. **Inference**
 
    * GPU:
 ```
   python scripts/infer/run_inference_merged.py
 ```
-  * CPU (Quantized GGUF):
+   * CPU (Quantized GGUF):
 ```
   python scripts/infer/pii_app.py
 ```
