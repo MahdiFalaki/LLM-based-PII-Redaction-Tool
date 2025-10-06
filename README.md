@@ -14,7 +14,7 @@ Handling sensitive data securely is critical. Off-the-shelf LLMs are not optimiz
 
 0. **Prerequisites**
 
-* A Hugging Face access token for Mistral Model.
+* A Hugging Face access token for Mistral Model (for How to refere to [How To Get Access HF Tokens](https://huggingface.co/docs/hub/en/security-tokens)).
 
 ```
    export HF_TOKEN="hf_XXXXXXXXXXXXXXXXXXXXXXXX"
