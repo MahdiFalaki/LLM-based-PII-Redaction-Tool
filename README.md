@@ -8,52 +8,7 @@ This project fine-tunes [mistralai/Mistral-7B-Instruct-v0.2](https://huggingface
 
 Handling sensitive data securely is critical. Off-the-shelf LLMs are not optimized for **structured text redaction** (names, addresses, phone numbers, credit cards, etc.). This project builds a reproducible pipeline for **finetuning, merging, quantization, inference, and evaluation**, producing a lightweight model ready for real-world redaction tasks. 
 
---- 
-
-## 🔄 Workflow 
-
-1. **Base Model Selection**
-
-   Use mistralai/Mistral-7B-Instruct-v0.2 as a strong instruction-following base.
-
-2. **Dataset Conversion** Convert ai4privacy/pii-masking-200k into **Alpaca-style JSONL** for Axolotl:
-```
-   {
-     "system": "You are a data privacy assistant.",
-     "instruction": "Mask all personally identifiable information in the given text.",
-     "input": "John Smith lives at 123 Main Street, Toronto.",
-     "output": "[FIRSTNAME] [LASTNAME] lives at [ADDRESS]."
-   }
-```
-3. **Configuration & Finetuning**
-   
-   Define hyperparameters in config/pii_config.yml and fine-tune with Axolotl.
-
-4. **LoRA Merge**
-   
-   Merge LoRA adapter weights into the base model to produce a standalone merged model.
-
-5. **Post-Processing**
-
-   * Canonicalize tags (e.g., [Firstname] → [FIRSTNAME])
-
-   * Collapse structured blocks ([BUILDINGNUMBER] [STREET] [CITY] → [ADDRESS])
-
-   * Override credit card patterns if misclassified as phone numbers
-
-   * Reduce tag space for quantized model (e.g., CITY/STATE → [ADDRESS])
-
-6. **Inference**
-
-   * GPU (HF Transformers): run inference on merged model
-
-   * CPU (llama.cpp): convert to GGUF, quantize (Q4_K_M), and run on CPU
-
-7. **Evaluation**
-   
-   Compare GPU vs CPU outputs on 100 random samples using scripts/eval/run_eval.py. Metrics include confusion matrices and macro Precision/Recall/F1.
-
---- 
+---
 
 **📂 Repository Layout**
 
@@ -98,29 +53,6 @@ ${PROJECT_ROOT}
    -- compare_cli.py
    -- evaluate_100.sh
 ```
-
---- 
-
-## GPU vs CPU Models
-   This repository provides two ways to run the model:
-   
-   * *GPU (HF Transformers, merged model)*
-   
-     * Best performance (accuracy + speed).
-      
-     * Requires CUDA and enough VRAM.
-      
-     * Recommended for production use.
-   
-   * *CPU (Quantized GGUF via llama.cpp)*
-   
-     * Lower performance due to quantization + CPU-only execution.
-      
-     * Enables running the model in lightweight environments.
-      
-     * Used for the Hugging Face Space demo, which is CPU-only.
-   
-⚠️ The HF Space demo is much slower and slightly less accurate. For original performance, run the GPU merged model locally instead. The CPU model is for the demo-only.
 
 --- 
 
@@ -176,6 +108,77 @@ ${PROJECT_ROOT}
    * Input: John Smith lives at 123 Main Street, Toronto. His credit card number is 4532 9483 0294 5521.
    * Output: [FIRSTNAME] [LASTNAME] lives at [ADDRESS]. His credit card number is [MASKEDNUMBER].
 ```
+
+--- 
+
+
+## GPU vs CPU Models
+   This repository provides two ways to run the model:
+   
+   * *GPU (HF Transformers, merged model)*
+   
+     * Best performance (accuracy + speed).
+      
+     * Requires CUDA and enough VRAM.
+      
+     * Recommended for production use.
+   
+   * *CPU (Quantized GGUF via llama.cpp)*
+   
+     * Lower performance due to quantization + CPU-only execution.
+      
+     * Enables running the model in lightweight environments.
+      
+     * Used for the Hugging Face Space demo, which is CPU-only.
+   
+⚠️ The HF Space demo is much slower and slightly less accurate. For original performance, run the GPU merged model locally instead. The CPU model is for the demo-only.
+
+--- 
+
+## 🔄 Workflow 
+
+1. **Base Model Selection**
+
+   Use mistralai/Mistral-7B-Instruct-v0.2 as a strong instruction-following base.
+
+2. **Dataset Conversion** Convert ai4privacy/pii-masking-200k into **Alpaca-style JSONL** for Axolotl:
+```
+   {
+     "system": "You are a data privacy assistant.",
+     "instruction": "Mask all personally identifiable information in the given text.",
+     "input": "John Smith lives at 123 Main Street, Toronto.",
+     "output": "[FIRSTNAME] [LASTNAME] lives at [ADDRESS]."
+   }
+```
+3. **Configuration & Finetuning**
+   
+   Define hyperparameters in config/pii_config.yml and fine-tune with Axolotl.
+
+4. **LoRA Merge**
+   
+   Merge LoRA adapter weights into the base model to produce a standalone merged model.
+
+5. **Post-Processing**
+
+   * Canonicalize tags (e.g., [Firstname] → [FIRSTNAME])
+
+   * Collapse structured blocks ([BUILDINGNUMBER] [STREET] [CITY] → [ADDRESS])
+
+   * Override credit card patterns if misclassified as phone numbers
+
+   * Reduce tag space for quantized model (e.g., CITY/STATE → [ADDRESS])
+
+6. **Inference**
+
+   * GPU (HF Transformers): run inference on merged model
+
+   * CPU (llama.cpp): convert to GGUF, quantize (Q4_K_M), and run on CPU
+
+7. **Evaluation**
+   
+   Compare GPU vs CPU outputs on 100 random samples using scripts/eval/run_eval.py. Metrics include confusion matrices and macro Precision/Recall/F1.
+
+--- 
 
 ## 📊 Results (100-sample evaluation)
 
