@@ -14,7 +14,7 @@ Handling sensitive data securely is critical. Off-the-shelf LLMs are not optimiz
 
 1. **Base Model Selection**
 
-   Use mistralai/Mistral-7B-Instruct-v0.2 as a strong multilingual instruction-following base.
+   Use mistralai/Mistral-7B-Instruct-v0.2 as a strong instruction-following base.
 
 2. **Dataset Conversion** Convert ai4privacy/pii-masking-200k into **Alpaca-style JSONL** for Axolotl:
 ```
