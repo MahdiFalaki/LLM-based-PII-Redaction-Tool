@@ -218,13 +218,13 @@ ${PROJECT_ROOT}
 
 ## 🛠 Post-Processing Rules
 
-   * Canonicalize tags* → unify casing/variants
+   * *Canonicalize tags* → unify casing/variants
 
-   * Collapse addresses* → [BUILDINGNUMBER] [STREET] [CITY] → [ADDRESS]
+   * *Collapse addresses* → [BUILDINGNUMBER] [STREET] [CITY] → [ADDRESS]
 
-   * Credit card override* → detect 13–19 digit sequences and normalize to [MASKEDNUMBER]
+   * *Credit card override* → detect 13–19 digit sequences and normalize to [MASKEDNUMBER]
 
-   * Reduce tag space* → CITY/STATE → [ADDRESS]
+   * *Reduce tag space* → CITY/STATE → [ADDRESS]
 
 ## 🗺 Roadmap
 
