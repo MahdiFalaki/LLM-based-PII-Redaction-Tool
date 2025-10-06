@@ -35,13 +35,13 @@ Handling sensitive data securely is critical. Off-the-shelf LLMs are not optimiz
 
 5. **Post-Processing**
 
-   * *Canonicalize tags (e.g., [Firstname] → [FIRSTNAME])
+   * Canonicalize tags (e.g., [Firstname] → [FIRSTNAME])
 
-   * *Collapse structured blocks ([BUILDINGNUMBER] [STREET] [CITY] → [ADDRESS])
+   * Collapse structured blocks ([BUILDINGNUMBER] [STREET] [CITY] → [ADDRESS])
 
-   * *Override credit card patterns if misclassified as phone numbers
+   * Override credit card patterns if misclassified as phone numbers
 
-   * *Reduce tag space for quantized model (e.g., CITY/STATE → [ADDRESS])
+   * Reduce tag space for quantized model (e.g., CITY/STATE → [ADDRESS])
 
 6. **Inference**
 
