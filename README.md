@@ -155,11 +155,11 @@ ${PROJECT_ROOT}
 
 5. **Inference**
 
-   * GPU:
+* GPU:
 ```
    python apps/hf_demo.py
 ```
-   * CPU (Quantized GGUF):
+* CPU (Quantized GGUF):
 ```
    python apps/pii_app.py
 ```
