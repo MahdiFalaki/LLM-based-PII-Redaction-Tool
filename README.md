@@ -201,8 +201,18 @@ ${PROJECT_ROOT}
 
 ## 📊 Results (100 generic unseen samples evaluation)
 
-![HF Model ](pii_masking/scripts/eval/eval_synthetic/confusion_hf.png)
-![GGFU Model](pii_masking/scripts/eval/eval_synthetic/confusion_gguf.png)
+<table align="center">
+  <tr>
+    <td align="center" width="50%">
+      <img src="pii_masking/scripts/eval/eval_synthetic/confusion_hf.png" width="95%"/><br>
+      <sub><b>HF Model Confusion Matrix Heatmap</b></sub>
+    </td>
+    <td align="center" width="50%">
+      <img src="pii_masking/scripts/eval/eval_synthetic/confusion_gguf.png" width="95%"/><br>
+      <sub><b>GGUF Model Confusion Matrix Heatmap</b></sub>
+    </td>
+  </tr>
+</table>
 
 ## 🛠 Post-Processing Rules
 
