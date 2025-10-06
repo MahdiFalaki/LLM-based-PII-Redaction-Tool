@@ -53,6 +53,8 @@ Handling sensitive data securely is critical. Off-the-shelf LLMs are not optimiz
    
    Compare GPU vs CPU outputs on 100 random samples using scripts/eval/run_eval.py. Metrics include confusion matrices and macro Precision/Recall/F1.
 
+--- 
+
 **📂 Repository Layout**
 
 ```
@@ -96,6 +98,8 @@ ${PROJECT_ROOT}
    -- compare_cli.py
    -- evaluate_100.sh
 ```
+
+--- 
 
 ## GPU vs CPU Models
    This repository provides two ways to run the model:
