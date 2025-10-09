@@ -1,15 +1,36 @@
-# 🔒 Text Redaction with Mistral-7B 
+# 🔒 Text Redaction with Mistral-7B
 
-This project fine-tunes [mistralai/Mistral-7B-Instruct-v0.2](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2) on the [ai4privacy/pii-masking-200k](https://huggingface.co/datasets/ai4privacy/pii-masking-200k) dataset to **redact sensitive information (PII)**. It supports both **GPU inference (merged Hugging Face model)** and **CPU inference demo-only (quantized GGUF model via llama.cpp)**, with post-processing for consistent normalization of entity tags. 
+This project fine-tunes [mistralai/Mistral-7B-Instruct-v0.2](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2) on the [ai4privacy/pii-masking-200k](https://huggingface.co/datasets/ai4privacy/pii-masking-200k) dataset to **redact sensitive information (PII)** such as names, emails, phone numbers, and addresses.  
+It combines **LLM fine-tuning**, **FastAPI-based backend inference**, and a **Gradio web frontend** for real-time text redaction.
 
-🚀 [Live Quantized Model Demo on Hugging Face Spaces](https://huggingface.co/spaces/MahdiFalaki/Gradio_pii_mistral7B_instruct-quantized4)
+🚀 [Live Demo (Quantized Model, Hugging Face Spaces)](https://huggingface.co/spaces/MahdiFalaki/Gradio_pii_mistral7B_instruct-quantized4)
 
---- 
+---
 
-## 🚀 Motivation 
+## 🚀 Motivation
 
-Handling sensitive data securely is critical. Off-the-shelf LLMs are not optimized for **structured text redaction** (names, addresses, phone numbers, credit cards, etc.). This project builds a reproducible pipeline for **finetuning, merging, quantization, inference, and evaluation**, producing a lightweight model ready for real-world redaction tasks. 
+Handling sensitive data securely is critical in real-world applications. Off-the-shelf LLMs are not optimized for **structured redaction** of personally identifiable information (PII).  
+This project delivers an **end-to-end privacy assistant** — from model training to production deployment — demonstrating a practical, lightweight redaction system with CPU-ready inference and post-processing normalization.
 
+---
+
+## 🧱 Architecture Overview
+
+| Layer | Technology | Purpose |
+|-------|-------------|----------|
+| Model | Mistral-7B-Instruct-v0.2 | Base instruction-tuned LLM |
+| Finetuning | Axolotl + LoRA | Task-specific PII masking adaptation |
+| Quantization | llama.cpp (GGUF Q4_K_M) | CPU-optimized inference |
+| Backend | **FastAPI + Pydantic** | REST API for redaction & normalization |
+| Frontend | **Gradio** | Web interface for testing & visualization |
+| Deployment | **Docker + Hugging Face Spaces** | Modular containerized deployment |
+
+### System Diagram
+```
+User ──▶ Gradio Frontend ──HTTP/JSON──▶ FastAPI Backend ─▶ llama.cpp Quantized Model
+│
+└─────▶ Post-processing (Normalization + Tag Canonicalization)
+```
 ---
 
 ## ⚡ Quick Start
