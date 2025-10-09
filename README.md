@@ -299,6 +299,8 @@ ${PROJECT_ROOT}
    * [x] HF Space live demo on CPU and local run on GPU
    
    * [x] Eval on 100 samples
+         
+   * [x] FastAPI + Gradio deployment on HF Spaces
    
    
 
