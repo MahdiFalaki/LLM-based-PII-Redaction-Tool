@@ -3,7 +3,7 @@
 This project fine-tunes [mistralai/Mistral-7B-Instruct-v0.2](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2) on the [ai4privacy/pii-masking-200k](https://huggingface.co/datasets/ai4privacy/pii-masking-200k) dataset to **redact sensitive information (PII)** such as names, emails, phone numbers, and addresses.  
 It combines **LLM fine-tuning**, **FastAPI-based backend inference**, and a **Gradio web frontend** for real-time text redaction.
 
-🚀 [Live Demo (Quantized Model, Hugging Face Spaces)](https://huggingface.co/spaces/MahdiFalaki/Gradio_pii_mistral7B_instruct-quantized4)
+🚀 [Live Demo (Quantized Model frontend, Hugging Face Spaces)](https://huggingface.co/spaces/MahdiFalaki/frontend)
 
 ---
 
