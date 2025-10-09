@@ -55,10 +55,6 @@ This project includes a **fully functional cloud deployment** split into two mod
 - **Frontend Space** — built with **Gradio**, communicates with the backend using the `API_URL` environment variable for live inference.  
 - Both Spaces are **CORS-enabled**, **Dockerized**, and optimized for **CPU-only** environments to ensure reproducibility and portability.  
 
-### Endpoints
-- `/` → Health check  
-- `/redact` → JSON-based inference endpoint  
-
 ### Example Request
 ```bash
 curl -s https://mahdifalaki-backend.hf.space/redact \
