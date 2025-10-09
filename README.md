@@ -62,7 +62,7 @@ curl -s https://mahdifalaki-backend.hf.space/redact \
 -d '{"text":"John Smith lives at 123 Main St, Toronto."}'
 ```
 
-## Example Response
+### Example Response
 
 {
   "normalized": "Mask all PII: [FIRSTNAME] [LASTNAME] lives at [ADDRESS]",
