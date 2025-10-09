@@ -1,16 +1,30 @@
 # 🔒 Text Redaction with Mistral-7B
 
-This project fine-tunes [mistralai/Mistral-7B-Instruct-v0.2](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2) on the [ai4privacy/pii-masking-200k](https://huggingface.co/datasets/ai4privacy/pii-masking-200k) dataset to **redact sensitive information (PII)** such as names, emails, phone numbers, and addresses.  
-It combines **LLM fine-tuning**, **FastAPI-based backend inference**, and a **Gradio web frontend** for real-time text redaction.
+This project has **two complementary objectives**:
 
-🚀 [Live Demo (Quantized Model frontend, Hugging Face Spaces)](https://huggingface.co/spaces/MahdiFalaki/frontend)
+1️⃣ **Local Training & Evaluation Pipeline** — fine-tuning, merging, quantizing, and evaluating an LLM for structured PII redaction.  
+2️⃣ **Cloud Application Deployment** — serving the quantized model via a **FastAPI backend** and **Gradio frontend** on **Hugging Face Spaces (CPU)** for real-time inference.
+
+The model is based on [mistralai/Mistral-7B-Instruct-v0.2](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2) and trained on the [ai4privacy/pii-masking-200k](https://huggingface.co/datasets/ai4privacy/pii-masking-200k) dataset.  
+It detects and masks personally identifiable information (names, emails, phone numbers, addresses, etc.) with robust **post-processing normalization**.
+
+🚀 [Live Demo (Frontend, Hugging Face Spaces)](https://huggingface.co/spaces/MahdiFalaki/frontend)
+
+---
+
+## 🎯 Dual-Purpose Design
+
+| Goal | Description |
+|------|--------------|
+| **Local Pipeline** | Implements complete model lifecycle — data conversion → fine-tuning (Axolotl + LoRA) → merging → quantization (llama.cpp) → evaluation. |
+| **Cloud Deployment** | Provides a deployable inference service via **FastAPI** (backend llama.cpp server) and **Gradio** (interactive web interface) — both containerized and hosted on Hugging Face Spaces CPU. |
 
 ---
 
 ## 🚀 Motivation
 
 Handling sensitive data securely is critical in real-world applications. Off-the-shelf LLMs are not optimized for **structured redaction** of personally identifiable information (PII).  
-This project delivers an **end-to-end privacy assistant** — from model training to production deployment — demonstrating a practical, lightweight redaction system with CPU-ready inference and post-processing normalization.
+This project demonstrates a full end-to-end privacy-preserving system — from **LLM training** to **cloud deployment** — offering a lightweight, interpretable, and CPU-efficient PII redactor.
 
 ---
 
@@ -22,8 +36,8 @@ This project delivers an **end-to-end privacy assistant** — from model trainin
 | Finetuning | Axolotl + LoRA | Task-specific PII masking adaptation |
 | Quantization | llama.cpp (GGUF Q4_K_M) | CPU-optimized inference |
 | Backend | **FastAPI + Pydantic** | REST API for redaction & normalization |
-| Frontend | **Gradio** | Web interface for testing & visualization |
-| Deployment | **Docker + Hugging Face Spaces** | Modular containerized deployment |
+| Frontend | **Gradio** | Web interface for real-time testing |
+| Deployment | **Docker + Hugging Face Spaces** | Modular container-based deployment |
 
 ### System Diagram
 ```
@@ -31,6 +45,34 @@ User ──▶ Gradio Frontend ──HTTP/JSON──▶ FastAPI Backend ─▶ l
 │
 └─────▶ Post-processing (Normalization + Tag Canonicalization)
 ```
+---
+
+## ☁️ Cloud Deployment (FastAPI + Gradio on Hugging Face Spaces)
+
+This project includes a **fully functional cloud deployment** split into two modular Hugging Face Spaces:
+
+- **Backend Space (`/redact`)** — hosts the quantized `llama.cpp` model with a **FastAPI** server and **Pydantic** schema for structured I/O.  
+- **Frontend Space** — built with **Gradio**, communicates with the backend using the `API_URL` environment variable for live inference.  
+- Both Spaces are **CORS-enabled**, **Dockerized**, and optimized for **CPU-only** environments to ensure reproducibility and portability.  
+
+### Endpoints
+- `/` → Health check  
+- `/redact` → JSON-based inference endpoint  
+
+### Example Request
+```bash
+curl -s https://mahdifalaki-backend.hf.space/redact \
+-H "Content-Type: application/json" \
+-d '{"text":"John Smith lives at 123 Main St, Toronto."}'
+```
+
+## Example Response
+
+{
+  "normalized": "Mask all PII: [FIRSTNAME] [LASTNAME] lives at [ADDRESS]",
+  "latency_ms": 62000
+}
+
 ---
 
 ## ⚡ Quick Start
