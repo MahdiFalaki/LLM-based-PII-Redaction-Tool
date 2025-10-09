@@ -61,14 +61,14 @@ curl -s https://mahdifalaki-backend.hf.space/redact \
 -H "Content-Type: application/json" \
 -d '{"text":"John Smith lives at 123 Main St, Toronto."}'
 ```
-
+```
 ### Example Response
 
 {
   "normalized": "Mask all PII: [FIRSTNAME] [LASTNAME] lives at [ADDRESS]",
   "latency_ms": 62000
 }
-
+```
 ---
 
 ## ⚡ Quick Start
