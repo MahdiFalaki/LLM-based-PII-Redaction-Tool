@@ -7,6 +7,8 @@ It combines **fine-tuning**, **LoRA merging**, **quantization**, and **Dockerize
 
 📚 **Dataset:** [ai4privacy/pii-masking-200k](https://huggingface.co/datasets/ai4privacy/pii-masking-200k)
 
+---
+
 ## 🌐 Live Demo
 
 > 🚀 Try the quantized model on Hugging Face Spaces:
