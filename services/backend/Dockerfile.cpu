@@ -1,0 +1,28 @@
+FROM python:3.10-slim
+
+# add build tools needed for llama-cpp-python
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    curl build-essential cmake \
+ && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+COPY src/ /app/src/
+COPY services/backend/common/ /app/services/backend/common/
+COPY services/backend/cpu/main.py /app/services/backend/cpu/main.py
+COPY services/backend/requirements-cpu.txt /app/requirements.txt
+
+ENV PYTHONPATH=/app/src
+
+# (optional) speed up build by skipping examples/tests in llama.cpp
+ENV CMAKE_ARGS="-DLLAMA_BUILD_EXAMPLES=OFF -DLLAMA_BUILD_TESTS=OFF"
+
+RUN pip install --no-cache-dir -U pip && pip install --no-cache-dir -r /app/requirements.txt
+
+ENV GGUF_PATH=/models/model.gguf \
+    N_CTX=2048 \
+    THREADS=8 \
+    CORS_ORIGINS="*"
+
+EXPOSE 7860
+CMD ["uvicorn", "services.backend.cpu.main:app", "--host", "0.0.0.0", "--port", "7860"]

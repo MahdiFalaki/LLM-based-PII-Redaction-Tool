@@ -1,0 +1,32 @@
+# === Model weights & archives ===
+merged_pii_model_full.zip
+quantized_model_cpu.zip
+models/
+pii_masking_mistral/merged_pii_model/
+
+# === External repos (users clone per README) ===
+llama.cpp/
+
+# === Python cache ===
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pkl
+
+# === Virtual envs ===
+.venv/
+env/
+venv/
+*.egg-info/
+
+# === IDE / OS ===
+.DS_Store
+.idea/
+.vscode/
+
+# === Docker / logs / misc build ===
+*.log
+*.out
+*.err
+build/

@@ -1,0 +1,21 @@
+FROM pytorch/pytorch:2.3.1-cuda12.1-cudnn8-runtime
+
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && apt-get install -y --no-install-recommends python3-pip curl && rm -rf /var/lib/apt/lists/*
+RUN python3 -m pip install -U pip
+
+WORKDIR /app
+COPY src/ /app/src/
+COPY services/backend/common/ /app/services/backend/common/
+COPY services/backend/gpu/main.py /app/services/backend/gpu/main.py
+COPY services/backend/requirements-gpu.txt /app/requirements.txt
+
+ENV PYTHONPATH=/app/src
+# requirements-gpu.txt must NOT include torch now
+RUN pip install --no-cache-dir -r /app/requirements.txt
+
+ENV HF_DIR=/models/merged_pii_model \
+    CORS_ORIGINS="*"
+
+EXPOSE 7862
+CMD ["uvicorn", "services.backend.gpu.main:app", "--host", "0.0.0.0", "--port", "7862"]

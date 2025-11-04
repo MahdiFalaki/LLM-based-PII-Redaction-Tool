@@ -1,0 +1,19 @@
+# Large/secret artifacts
+models/
+pii_masking_mistral/
+outputs/
+llama.cpp/
+*.jsonl
+*.safetensors
+*.pt
+*.bin
+*.gguf
+*.zip
+
+# Local app state / IDE
+.gradio/
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.idea/
+.vscode/

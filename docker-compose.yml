@@ -1,0 +1,61 @@
+version: "3.9"
+
+services:
+  backend-cpu:
+    build:
+      context: .
+      dockerfile: services/backend/Dockerfile.cpu
+    container_name: pii-backend-cpu
+    profiles: ["cpu"]
+    environment:
+      GGUF_PATH: /models/mistral7b-pii-f16.gguf
+      N_CTX: "2048"
+      THREADS: "8"
+      CORS_ORIGINS: "http://localhost:7861,http://127.0.0.1:7861,*"
+    volumes:
+      - ./models:/models:ro
+    ports:
+      - "7860:7860"
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:7860/"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+
+  backend-gpu:
+    build:
+      context: .
+      dockerfile: services/backend/Dockerfile.gpu
+    container_name: pii-backend-gpu
+    profiles: ["gpu"]
+    environment:
+      HF_DIR: /models/merged_pii_model
+      CORS_ORIGINS: "http://localhost:7863,http://127.0.0.1:7863,*"
+    volumes:
+      - ./pii_masking_mistral/merged_pii_model:/models/merged_pii_model:ro
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - capabilities: [gpu]
+    runtime: nvidia
+    ports:
+      - "7862:7862"
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:7862/"]
+      interval: 15s
+      timeout: 5s
+      retries: 10
+
+  frontend:
+    build:
+      context: .
+      dockerfile: services/frontend/Dockerfile
+    container_name: pii-frontend
+    environment:
+      GRADIO_SERVER_NAME: "0.0.0.0"
+      GRADIO_SERVER_PORT: "7861"
+      CPU_API_URL: "http://backend-cpu:7860"
+      GPU_API_URL: "http://backend-gpu:7862"
+    ports:
+      - "7861:7861"
