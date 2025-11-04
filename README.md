@@ -7,9 +7,13 @@ It combines **fine-tuning**, **LoRA merging**, **quantization**, and **Dockerize
 
 📚 **Dataset:** [ai4privacy/pii-masking-200k](https://huggingface.co/datasets/ai4privacy/pii-masking-200k)
 
-🌐 **Live Demo (Quantized CPU on Hugging Face):** https://huggingface.co/spaces/MahdiFalaki/frontend
+## 🌐 Live Demo
 
-⚠️ The demo runs the **GGUF quantized CPU version**, which is slower and slightly less accurate than the full GPU model.
+> 🚀 Try the quantized model on Hugging Face Spaces:
+> [**🔗 https://huggingface.co/spaces/MahdiFalaki/frontend**](https://huggingface.co/spaces/MahdiFalaki/frontend)
+
+⚠️ This demo runs the **quantized GGUF model (CPU)** via `llama.cpp`.
+Speed and accuracy are slightly reduced compared to the full-precision GPU version.
 
 ---
 
@@ -23,16 +27,6 @@ It combines **fine-tuning**, **LoRA merging**, **quantization**, and **Dockerize
 | **Backend** | FastAPI + Pydantic | REST API redaction service |
 | **Frontend** | Gradio | Real-time dual-mode web UI |
 | **Deployment** | Docker | Modular CPU/GPU containers |
-
----
-
-## 🌐 Live Demo
-
-> 🚀 Try the quantized model on Hugging Face Spaces:
-> [**🔗 https://huggingface.co/spaces/MahdiFalaki/frontend**](https://huggingface.co/spaces/MahdiFalaki/frontend)
-
-⚠️ This demo runs the **quantized GGUF model (CPU)** via `llama.cpp`.
-Speed and accuracy are slightly reduced compared to the full-precision GPU version.
 
 ---
 
