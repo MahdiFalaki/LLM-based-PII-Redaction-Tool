@@ -1,0 +1,9 @@
+# Axolotl-centered training stack.
+# Keep these pinned to avoid resolver backtracking across incompatible
+# axolotl/transformers/huggingface_hub combinations.
+# Note: recent `axolotl` wheels may be meta-packages in some environments.
+# If `python -m axolotl.cli.preprocess` is missing, use AXOLOTL_SRC pointing
+# to a local Axolotl source checkout.
+axolotl==0.5.0
+bitsandbytes==0.44.1
+datasets==3.0.1

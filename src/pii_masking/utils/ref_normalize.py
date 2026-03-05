@@ -1,5 +1,5 @@
 import re
-from pii_masking.scripts.utils.post_processing import CANON  # package import
+from pii_masking.utils.tag_profiles import CANON
 
 BRACKETED_TAG = re.compile(r"\[([A-Za-z0-9_]+)\]")
 

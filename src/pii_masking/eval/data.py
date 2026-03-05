@@ -1,10 +1,23 @@
 # src/pii_masking/eval/data.py
 import json
+import os
 import random
+from pathlib import Path
 from datasets import load_dataset
 
+_DEFAULT_CACHE = Path(os.getenv("PII_DATASETS_CACHE", Path.cwd() / ".cache" / "hf_datasets"))
+
+def _load(split: str):
+    _DEFAULT_CACHE.mkdir(parents=True, exist_ok=True)
+    return load_dataset("ai4privacy/pii-masking-200k", split=split, cache_dir=str(_DEFAULT_CACHE))
+
 def load_sampled(k: int = 100, seed: int = 42, split: str = "train"):
-    ds = load_dataset("ai4privacy/pii-masking-200k", split=split)
+    if split == "train":
+        ds = _load("train")
+    else:
+        base = _load("train")
+        holdout = base.train_test_split(test_size=0.02, seed=seed)
+        ds = holdout["test"]
     rng = random.Random(seed)
     idxs = rng.sample(range(len(ds)), k=min(k, len(ds)))
     subset = []

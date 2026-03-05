@@ -1,6 +1,6 @@
 import os
 from llama_cpp import Llama
-from pii_masking.utils.prompting import mistral_inst
+from pii_masking.utils.prompting import alpaca_prompt
 
 class GGUFModel:
     def __init__(self, gguf_path: str, n_ctx: int = 2048, n_threads: int | None = None):
@@ -11,7 +11,7 @@ class GGUFModel:
         )
 
     def generate(self, system: str, user_text: str, max_new_tokens: int = 256) -> str:
-        prompt = mistral_inst(system, f"Mask all PII: {user_text}").lstrip("<s>")
+        prompt = alpaca_prompt(system=system, instruction="Mask all PII:", input_text=user_text)
         out = self.ll.create_completion(
             prompt=prompt,
             temperature=0.0,

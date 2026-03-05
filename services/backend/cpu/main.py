@@ -8,7 +8,13 @@ from services.backend.common.schema import RedactIn, RedactOut
 GGUF_PATH = os.getenv("GGUF_PATH")  # e.g. /models/mistral7b-pii-f16.gguf
 N_CTX = int(os.getenv("N_CTX", "2048"))
 THREADS = int(os.getenv("THREADS", str(os.cpu_count() or 4)))
-SYSTEM = os.getenv("SYSTEM_PROMPT", "You are a data privacy assistant.")
+SYSTEM = os.getenv(
+    "PII_SYSTEM_PROMPT",
+    "You are a PII redaction assistant. Replace PII with bracketed tags only. "
+    "Use only these tags: [NAME], [ADDRESS], [CARDNUMBER], [PHONENUMBER], [DATE], "
+    "[EMAIL], [URL], [USERNAME], [IP], [IPV4], [IPV6], [ACCOUNTNUMBER], [OTHERPII]. "
+    "Preserve all non-PII text exactly. Output only the redacted text.",
+)
 
 app = FastAPI(title="PII Redaction (CPU/GGUF)")
 app.add_middleware(

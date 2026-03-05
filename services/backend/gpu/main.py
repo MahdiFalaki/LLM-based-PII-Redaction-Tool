@@ -6,7 +6,13 @@ from pii_masking.utils.post_processing import normalize_entities
 from services.backend.common.schema import RedactIn, RedactOut
 
 HF_DIR = os.getenv("HF_DIR")  # e.g. /models/merged_pii_model
-SYSTEM = os.getenv("SYSTEM_PROMPT", "You are a data privacy assistant.")
+SYSTEM = os.getenv(
+    "PII_SYSTEM_PROMPT",
+    "You are a PII redaction assistant. Replace PII with bracketed tags only. "
+    "Use only these tags: [NAME], [ADDRESS], [CARDNUMBER], [PHONENUMBER], [DATE], "
+    "[EMAIL], [URL], [USERNAME], [IP], [IPV4], [IPV6], [ACCOUNTNUMBER], [OTHERPII]. "
+    "Preserve all non-PII text exactly. Output only the redacted text.",
+)
 
 app = FastAPI(title="PII Redaction (GPU/HF)")
 app.add_middleware(

@@ -198,7 +198,7 @@ Response:
 
 ```
 # 1️⃣ Fine-tune with Axolotl
-bash scripts/train/train_full.sh
+bash src/pii_masking/train/train_full.sh
 
 # 2️⃣ Merge LoRA
 python tools/merge.py
@@ -212,6 +212,32 @@ llama.cpp/build/bin/quantize \
   models/mistral7b-pii-f16.gguf \
   models/mistral7b-pii-Q4_K_M.gguf Q4_K_M
 ```
+
+### English-only + basic tag profile (recommended for focused deployment)
+```bash
+# Regenerate dataset from English samples only with reduced tag taxonomy
+PII_LANG=en \
+PII_TAG_PROFILE=basic \
+FORCE_REBUILD_DATA=1 \
+bash src/pii_masking/train/train_full.sh
+```
+
+If your Python env only has the `axolotl` meta-package (without `axolotl.cli` modules), point to a local Axolotl source checkout:
+```bash
+AXOLOTL_SRC=/path/to/axolotl/src \
+PII_LANG=en \
+PII_TAG_PROFILE=basic \
+FORCE_REBUILD_DATA=1 \
+bash src/pii_masking/train/train_full.sh
+```
+
+`PII_TAG_PROFILE=basic` collapses labels into a simpler set:
+- `[NAME]`
+- `[ADDRESS]`
+- `[CARDNUMBER]`
+- `[PHONENUMBER]`
+- selected retained tags (`[EMAIL]`, `[DATE]`, `[URL]`, `[USERNAME]`, `[IP*]`, `[ACCOUNTNUMBER]`)
+- `[OTHERPII]` fallback for the rest
 
 ---
 

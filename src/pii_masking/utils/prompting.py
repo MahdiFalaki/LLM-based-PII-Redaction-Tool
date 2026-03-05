@@ -1,9 +1,11 @@
 # src/pii_masking/utils/prompting.py
-def mistral_inst(system: str, user: str) -> str:
-    return f"<s>[INST] {system}\n\n{user} [/INST]"
-
-def mistral_messages(system: str, user: str):
-    return [
-        {"role": "system", "content": system},
-        {"role": "user", "content": user},
-    ]
+def alpaca_prompt(system: str, instruction: str, input_text: str) -> str:
+    return (
+        "Below is an instruction that describes a task, paired with an input that provides further context. "
+        "Write a response that appropriately completes the request.\n\n"
+        "### Instruction:\n"
+        f"{system}\n\n{instruction}\n\n"
+        "### Input:\n"
+        f"{input_text}\n\n"
+        "### Response:\n"
+    )

@@ -1,12 +1,16 @@
 # src/pii_masking/eval/run_eval.py
 import os, json, csv, argparse
-from collections import defaultdict, Counter
 
 # config is optional; fall back if not present
 try:
     from pii_masking.config.config import SYSTEM_PROMPT, N_CTX, CPU_THREADS
 except Exception:
-    SYSTEM_PROMPT = "You are a data privacy assistant."
+    SYSTEM_PROMPT = (
+        "You are a PII redaction assistant. Replace PII with bracketed tags only. "
+        "Use only these tags: [NAME], [ADDRESS], [CARDNUMBER], [PHONENUMBER], [DATE], "
+        "[EMAIL], [URL], [USERNAME], [IP], [IPV4], [IPV6], [ACCOUNTNUMBER], [OTHERPII]. "
+        "Preserve all non-PII text exactly. Output only the redacted text."
+    )
     N_CTX = 2048
     CPU_THREADS = None  # auto
 
@@ -31,7 +35,7 @@ def main():
     ap.add_argument("--gguf", required=True)
     ap.add_argument("--samples", type=int, default=100, help="Used only if --jsonl not provided")
     ap.add_argument("--seed", type=int, default=42)
-    ap.add_argument("--split", default="train", choices=["train"])
+    ap.add_argument("--split", default="validation", choices=["train", "validation", "test"])
     ap.add_argument("--jsonl", default=None, help="Path to custom JSONL (input/output format)")
     ap.add_argument("--outdir", default="eval_out")
     ap.add_argument("--plot", action="store_true", help="Save heatmap PNGs")
@@ -109,8 +113,16 @@ def main():
 
     agg_hf = aggregate_prf(prf_hf_all)
     agg_gg = aggregate_prf(prf_gg_all)
-    print(f"\n=== Macro P/R/F1: HF merged (GPU) ===\nP={agg_hf['macro_p']:.3f} R={agg_hf['macro_r']:.3f} F1={agg_hf['macro_f1']:.3f}")
-    print(f"\n=== Macro P/R/F1: GGUF quantized (CPU) ===\nP={agg_gg['macro_p']:.3f} R={agg_gg['macro_r']:.3f} F1={agg_gg['macro_f1']:.3f}")
+    print(
+        f"\n=== Macro/Micro P/R/F1: HF merged (GPU) ===\n"
+        f"macro: P={agg_hf['macro_p']:.3f} R={agg_hf['macro_r']:.3f} F1={agg_hf['macro_f1']:.3f}\n"
+        f"micro: P={agg_hf['micro_p']:.3f} R={agg_hf['micro_r']:.3f} F1={agg_hf['micro_f1']:.3f}"
+    )
+    print(
+        f"\n=== Macro/Micro P/R/F1: GGUF quantized (CPU) ===\n"
+        f"macro: P={agg_gg['macro_p']:.3f} R={agg_gg['macro_r']:.3f} F1={agg_gg['macro_f1']:.3f}\n"
+        f"micro: P={agg_gg['micro_p']:.3f} R={agg_gg['micro_r']:.3f} F1={agg_gg['micro_f1']:.3f}"
+    )
 
     if args.plot:
         save_confusion_heatmap(conf_hf, "HF merged (GPU)", os.path.join(args.outdir, "confusion_hf.png"))

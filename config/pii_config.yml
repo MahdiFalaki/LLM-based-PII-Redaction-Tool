@@ -6,19 +6,21 @@ trust_remote_code: false
 
 # Datasets
 datasets:
-  - path: examples/pii_masking/data/pii_mask.jsonl
+  - path: data/pii_mask.jsonl
     type: alpaca
     message_property_mappings:
       system: system
       instruction: instruction
       input: input
       output: output
+val_set_size: 0.05
 
 # Preprocess (tokenization/packing)
 sequence_len: 1024
 sample_packing: true
 pad_to_sequence_len: true
 preprocessed_data_dir: preprocessed/pii_masking_mistral  # <— easy to clean later
+dataset_prepared_path: preprocessed/pii_masking_mistral
 
 # Training output
 output_dir: outputs/pii_masking_mistral
@@ -31,16 +33,27 @@ lora_dropout: 0.05
 lora_target_linear: true
 
 # Optim & schedule
-learning_rate: 0.0002
+learning_rate: 0.0001
 optimizer: adamw_bnb_8bit
 micro_batch_size: 1
 gradient_accumulation_steps: 8
+num_epochs: 3
+lr_scheduler: cosine
+warmup_ratio: 0.03
+max_grad_norm: 1.0
 logging_steps: 1
+eval_strategy: epoch
+save_strategy: epoch
+load_best_model_at_end: true
+metric_for_best_model: eval_loss
+greater_is_better: false
+save_total_limit: 3
 
 # Memory savers
 gradient_checkpointing: true
 bf16: auto
 tf32: false
+seed: 42
 
 # Misc
 load_in_4bit: false

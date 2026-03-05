@@ -5,9 +5,14 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 from llama_cpp import Llama
 
 from pii_masking.utils.post_processing import normalize_entities
-from pii_masking.utils.prompting import mistral_messages, mistral_inst
+from pii_masking.utils.prompting import alpaca_prompt
 
-SYSTEM = "You are a data privacy assistant."
+SYSTEM = (
+    "You are a PII redaction assistant. Replace PII with bracketed tags only. "
+    "Use only these tags: [NAME], [ADDRESS], [CARDNUMBER], [PHONENUMBER], [DATE], "
+    "[EMAIL], [URL], [USERNAME], [IP], [IPV4], [IPV6], [ACCOUNTNUMBER], [OTHERPII]. "
+    "Preserve all non-PII text exactly. Output only the redacted text."
+)
 
 def load_hf(hf_dir: str):
     tok = AutoTokenizer.from_pretrained(hf_dir, use_fast=True)
@@ -25,11 +30,9 @@ def load_hf(hf_dir: str):
     return tok, model, device
 
 def gen_hf(tok, model, device, src, max_new_tokens=128):
-    msgs = [{"role": "system", "content": SYSTEM},
-            {"role": "user", "content": f"Mask all PII: {src}"}]
-    input_ids = tok.apply_chat_template(
-        msgs, return_tensors="pt", add_generation_prompt=True
-    ).to(device)
+    prompt = alpaca_prompt(system=SYSTEM, instruction="Mask all PII:", input_text=src)
+    enc = tok(prompt, return_tensors="pt", add_special_tokens=False)
+    input_ids = enc["input_ids"].to(device)
     attn = torch.ones_like(input_ids, dtype=torch.long, device=device)
     out_ids = model.generate(
         input_ids=input_ids,
@@ -49,7 +52,7 @@ def load_gguf(gguf_path, n_ctx=2048, n_threads=None):
     return Llama(model_path=gguf_path, n_ctx=n_ctx, n_threads=n_threads, verbose=False)
 
 def gen_gguf(llm, src, max_new_tokens=256):
-    prompt = mistral_inst(SYSTEM, f"Mask all PII: {src}")
+    prompt = alpaca_prompt(system=SYSTEM, instruction="Mask all PII:", input_text=src)
     out = llm.create_completion(prompt=prompt, max_tokens=max_new_tokens, stop=["</s>"])
     raw = out["choices"][0]["text"]
     return normalize_entities(raw, system=SYSTEM, user_text=src)
