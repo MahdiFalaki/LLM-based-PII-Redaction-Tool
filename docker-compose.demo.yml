@@ -1,0 +1,34 @@
+services:
+  backend-demo:
+    build:
+      context: .
+      dockerfile: services/backend/Dockerfile.cpu
+    environment:
+      GGUF_PATH: /home/mark/Projects/pii_masking/outputs/gguf/pii_masking_english_basic_v1/quantized/mistral7b-pii-Q5_K_M.gguf
+      N_CTX: "1024"
+      THREADS: "4"
+      CORS_ORIGINS: "*"
+    volumes:
+      - /home/mark/Projects/pii_masking/outputs/gguf/pii_masking_english_basic_v1/quantized/mistral7b-pii-Q5_K_M.gguf:/home/mark/Projects/pii_masking/outputs/gguf/pii_masking_english_basic_v1/quantized/mistral7b-pii-Q5_K_M.gguf:ro
+    ports:
+      - "7860:7860"
+    healthcheck:
+      test: ["CMD", "curl", "-sf", "http://localhost:7860/"]
+      interval: 15s
+      timeout: 5s
+      retries: 20
+
+  frontend-demo:
+    build:
+      context: .
+      dockerfile: services/frontend/Dockerfile.demo
+    environment:
+      CPU_API_URL: "http://backend-demo:7860"
+      GRADIO_SERVER_NAME: "0.0.0.0"
+      GRADIO_SERVER_PORT: "7861"
+      PII_MAX_NEW_TOKENS: "128"
+    depends_on:
+      backend-demo:
+        condition: service_healthy
+    ports:
+      - "7861:7861"

@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   backend-cpu:
     build:
@@ -8,12 +6,15 @@ services:
     container_name: pii-backend-cpu
     profiles: ["cpu"]
     environment:
-      GGUF_PATH: /models/mistral7b-pii-f16.gguf
+      GGUF_PATH: /models/gguf/quantized/mistral7b-pii-Q5_K_M.gguf
+      GGUF_SCAN_DIRS: /models/gguf
+      EVAL_RUNS_DIR: /app/eval_runs
       N_CTX: "2048"
       THREADS: "8"
       CORS_ORIGINS: "http://localhost:7861,http://127.0.0.1:7861,*"
     volumes:
-      - ./models:/models:ro
+      - ./outputs/gguf/pii_masking_english_basic_v1:/models/gguf:ro
+      - ./src/pii_masking/eval/eval_runs:/app/eval_runs:ro
     ports:
       - "7860:7860"
     healthcheck:
@@ -30,15 +31,10 @@ services:
     profiles: ["gpu"]
     environment:
       HF_DIR: /models/merged_pii_model
-      CORS_ORIGINS: "http://localhost:7863,http://127.0.0.1:7863,*"
+      CORS_ORIGINS: "http://localhost:7861,http://127.0.0.1:7861,*"
     volumes:
-      - ./pii_masking_mistral/merged_pii_model:/models/merged_pii_model:ro
-    deploy:
-      resources:
-        reservations:
-          devices:
-            - capabilities: [gpu]
-    runtime: nvidia
+      - ./outputs/pii_masking_mistral_english_basic_v1/merged_pii_model:/models/merged_pii_model:ro
+    gpus: all
     ports:
       - "7862:7862"
     healthcheck:
