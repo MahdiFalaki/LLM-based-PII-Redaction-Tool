@@ -1,281 +1,279 @@
-# 🔒 LLM-Based Text Redaction with Mistral-7B
+# PII Redaction Platform
 
-This project implements an **end-to-end LLM redaction system** optimized for both **GPU** (Transformers) and **CPU** (quantized llama.cpp) environments.
-It combines **fine-tuning**, **LoRA merging**, **quantization**, and **Dockerized deployment** via **FastAPI** and **Gradio**, supporting **dual CPU/GPU inference**.
+Production-ready PII masking pipeline built on Mistral-7B, with:
 
-🧠 **Base model:** [mistralai/Mistral-7B-Instruct-v0.2](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2)
+- Fine-tuning workflow (Axolotl + LoRA)
+- CPU and GPU inference backends
+- FastAPI backend
+- Gradio web app for side-by-side inference
+- End-to-end Docker deployment
 
-📚 **Dataset:** [ai4privacy/pii-masking-200k](https://huggingface.co/datasets/ai4privacy/pii-masking-200k)
+Live demo: https://huggingface.co/spaces/MahdiFalaki/frontend
 
----
+## Supported Labels
 
-## 🌐 Live Demo
+`[NAME] [ADDRESS] [CARDNUMBER] [PHONENUMBER] [DATE] [EMAIL] [URL] [USERNAME] [IP] [IPV4] [IPV6] [ACCOUNTNUMBER] [OTHERPII]`
 
-> 🚀 Try the quantized model on Hugging Face Spaces:
-> [**🔗 https://huggingface.co/spaces/MahdiFalaki/frontend**](https://huggingface.co/spaces/MahdiFalaki/frontend)
+## Project Specs
 
-⚠️ This demo runs the **quantized GGUF model (CPU)** via `llama.cpp`.
-Speed and accuracy are slightly reduced compared to the full-precision GPU version.
+- Dataset (converted): `209,261` samples
+- Dataset (English-only training set): `43,501` samples (`43,491` after sequence-length filtering)
+- LoRA config: `r=32`, `alpha=16`, `dropout=0.05`
+- Trainable parameters: `83,886,080` (`1.1451%` of `7,325,618,176`)
+- Training device: `NVIDIA GeForce RTX 3090 (24 GB VRAM)`
+- Driver/CUDA used: `Driver 580.126.09`, `CUDA 13.0`
 
----
+## System Architecture
 
-## 🧩 Overview
+- Model: `mistralai/Mistral-7B-Instruct-v0.2`
+- Training: Axolotl + LoRA
+- CPU Inference: llama.cpp / GGUF
+- GPU Inference: Hugging Face Transformers
+- API: FastAPI
+- UI: Gradio
+- Orchestration: Docker Compose
 
-| Component | Technology | Description |
-|------------|-------------|-------------|
-| **Model** | Mistral-7B-Instruct-v0.2 | Base instruction-tuned LLM |
-| **Fine-Tuning** | Axolotl + LoRA | PII masking adaptation |
-| **Quantization** | llama.cpp (GGUF Q4_K_M / F16) | CPU-optimized inference |
-| **Backend** | FastAPI + Pydantic | REST API redaction service |
-| **Frontend** | Gradio | Real-time dual-mode web UI |
-| **Deployment** | Docker | Modular CPU/GPU containers |
+## Quick Start (Local Deployment)
 
----
-
-## 🧱 Architecture
-
-| Layer | Technology | Purpose |
-|:------|:------------|:---------|
-| **Model** | Mistral-7B-Instruct | Instruction-tuned backbone |
-| **Fine-Tuning** | Axolotl + LoRA | Task-specific adaptation |
-| **Quantization** | llama.cpp (GGUF) | Lightweight CPU inference |
-| **Backend** | **FastAPI + Pydantic** | REST API for PII redaction |
-| **Frontend** | **Gradio** | Interactive web interface |
-| **Containerization** | **Docker Compose** | Unified CPU/GPU deployment |
-
-### System Flow
-
-User ─▶ Gradio Frontend
-├──▶ FastAPI (GPU: Transformers)
-└──▶ FastAPI (CPU: llama.cpp GGUF)
-└──▶ Post-processing & Normalization
-
----
-
-## ⚙️ Local Docker Deployment
-
-Clone the repository inside Axolotl’s `/examples` folder for seamless model training and evaluation.
+### 1. Clone
 
 ```bash
-# 1️⃣ Clone Axolotl
-git clone https://github.com/axolotl-ai-cloud/axolotl.git
-cd axolotl/examples
-
-# 2️⃣ Clone this repo inside /examples
-git clone https://github.com/MahdiFalaki/LLM-based-PII-Redaction-Tool.git pii_masking
-cd pii_masking
+git clone https://github.com/MahdiFalaki/LLM-based-PII-Redaction-Tool.git
+cd LLM-based-PII-Redaction-Tool
 ```
 
----
+### 2. Download model artifacts
 
-## 📦 Download Required Model Weights
+Place artifacts in this structure:
 
-Before running any containers, ensure the model weights are available locally —
-the merged FP16 model (for GPU) and the quantized GGUF model (for CPU).
-These are required for **FastAPI** to load the models inside their respective Docker backends.
-
-### 🔹 Option 1 — Fast Deployment (Recommended)
-
-Download the pre-trained weights directly from Hugging Face:
-
-```
-pii_masking/
- ├── models/
- │    └── mistral7b-pii-f16.gguf
- └── pii_masking_mistral/
-      └── merged_pii_model/
+```text
+.
+└── outputs/
+    ├── gguf/
+    │   └── pii_masking_english_basic_v1/
+    │       └── quantized/
+    │           └── mistral7b-pii-Q5_K_M.gguf
+    └── pii_masking_mistral_english_basic_v1/
+        └── merged_pii_model/
+            ├── config.json
+            ├── tokenizer_config.json
+            └── ...
 ```
 
-### 📥 Download links
-- **Quantized CPU Model (GGUF):**
-  [quantized_model_cpu.zip](https://huggingface.co/MahdiFalaki/pii-masking-models/resolve/main/quantized_model_cpu.zip)
+Downloads:
 
-- **Merged GPU Model (FP16):**
-  [merged_pii_model_full.zip](https://huggingface.co/MahdiFalaki/pii-masking-models/resolve/main/merged_pii_model_full.zip)
+- CPU GGUF: https://huggingface.co/MahdiFalaki/pii-masking-models/resolve/main/quantized_model_cpu.zip
+- GPU merged model: https://huggingface.co/MahdiFalaki/pii-masking-models/resolve/main/merged_pii_model_full.zip
 
-### 📂 Unzip the merged model
+Example:
+
 ```bash
-unzip merged_pii_model_full.zip -d pii_masking_mistral/
+mkdir -p outputs/gguf/pii_masking_english_basic_v1/quantized \
+  outputs/pii_masking_mistral_english_basic_v1
+# unzip downloads here
 ```
 
-After unzipping, ensure the structure looks like this:
-```
-pii_masking/
- ├── models/mistral7b-pii-f16.gguf
- └── pii_masking_mistral/merged_pii_model/config.json
-```
+### 3. Start services
 
-Once both models are correctly placed, you can proceed with deployment.
+CPU profile:
 
----
-
-### 🔹 Option 2 — Reproduce Weights Yourself
-
-If you have GPU resources and wish to recreate the models:
-
-1️⃣ Fine-tune with **Axolotl (LoRA)**
-2️⃣ Merge LoRA weights
-3️⃣ Quantize with **llama.cpp**
-
-👉 See the “Training & Quantization Workflow” section later in this README for full reproduction steps.
-
----
-
-⚠️ **Note:**
-- The model weights are large (~11–15 GB each).
-- **Do not commit them to GitHub** — keep them local.
-- Docker Compose automatically mounts them as volumes during container startup.
-
----
-
-## 🧩 Start Containers
-
-Once weights are in place:
-
-### CPU Deployment
-```
+```bash
 docker compose --profile cpu up --build
 ```
-###  Access
-```
-Frontend → http://localhost:7861
-Backend  → http://localhost:7860
-```
 
-###  GPU Deployment
-```
+GPU profile:
+
+```bash
 docker compose --profile gpu up --build
 ```
-###  Access
-```
-Frontend → http://localhost:7863
-Backend  → http://localhost:7862s
-```
 
-### Dual Mode (both backends)
-```
+Dual profile (recommended for side-by-side comparison):
+
+```bash
 docker compose --profile cpu --profile gpu up --build
 ```
 
-The Gradio interface will show two synchronized outputs:
+Endpoints:
 
-🧠 GPU (Transformers FP16)
-⚙️ CPU (Quantized GGUF)
+- Frontend: `http://localhost:7861`
+- CPU API: `http://localhost:7860`
+- GPU API: `http://localhost:7862`
 
----
+Notes:
 
-## 🧠 Environment Notes
+- Open the UI at `http://localhost:7861`, not `0.0.0.0:7861`
+- The frontend expects the merged HF model and quantized GGUF artifacts to already exist
+- If you update frontend code, rebuild that image before restarting:
 
-GPU Backend – runs the merged Transformers model (merged_pii_model) using PyTorch + CUDA.
-Requires NVIDIA GPU (≈ 16 GB VRAM recommended).
-
-CPU Backend – loads mistral7b-pii-f16.gguf or Q4_K_M quantized weights through llama-cpp-python.
-Requires only CPU threads, no GPU dependencies.
-
-Each backend container has its own Python environment, tailored to its runtime (Torch + CUDA vs llama.cpp bindings).
-
----
-
-## 💻 Example API Usage
-
+```bash
+docker compose build frontend
 ```
+
+## Demo Lite
+
+For a lightweight single-model demo that reuses the existing local GGUF artifact without copying it:
+
+```bash
+docker compose -f docker-compose.demo.yml up --build
+```
+
+Demo endpoints:
+
+- Demo UI: `http://localhost:7861`
+- Demo API: `http://localhost:7860`
+
+The demo path uses:
+
+- one GGUF model
+- one CPU backend
+- one simplified Gradio UI
+- no arena, leaderboard, or model switching
+
+## API Usage
+
+```bash
 curl -X POST http://localhost:7860/redact \
   -H "Content-Type: application/json" \
-  -d '{"text":"John Smith lives at 123 Main St, Toronto. CC 4532 9483 0294 5521."}'
+  -d '{"text":"John Smith lives at 123 Main St. Card 4532 9483 0294 5521."}'
 ```
 
-Response:
-```
-{
-  "normalized": "[FIRSTNAME] [LASTNAME] lives at [ADDRESS]. CC [MASKEDNUMBER].",
-  "latency_ms": 1090
-}
-```
----
+## Training
 
-## 🔬 Training & Quantization Workflow
+### 1. Install training dependencies
 
-
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -U pip
+pip install -r requirements-train.txt
 ```
-# 1️⃣ Fine-tune with Axolotl
+
+Install merge and evaluation dependencies as needed:
+
+```bash
+pip install -r requirements-tools.txt
+pip install -r requirements-eval.txt
+```
+
+If your environment uses an Axolotl source checkout, export:
+
+```bash
+export AXOLOTL_SRC=/path/to/axolotl/src
+```
+
+### 2. Run training (English + basic profile)
+
+```bash
 bash src/pii_masking/train/train_full.sh
+```
 
-# 2️⃣ Merge LoRA
+### 3. Training configuration defaults
+
+Canonical contract:
+
+- [config/experiment_contract.json](/home/mark/Projects/pii_masking/config/experiment_contract.json)
+- English-only
+- `basic` tag profile
+- frozen `train` / `validation` / `test` splits
+- generated dataset artifacts live under `data/contracts/` and are not source-controlled
+
+Training config defaults in `config/pii_config.yml`.
+
+Training data roles:
+
+- `train.jsonl`: optimization / gradient updates
+- `validation.jsonl`: in-training evaluation and best-checkpoint selection
+- `test.jsonl`: final held-out evaluation only
+
+## Merge and Quantize
+
+After LoRA training:
+
+```bash
+python tools/merge.py \
+  --root outputs/pii_masking_mistral_english_basic_v1 \
+  --out outputs/pii_masking_mistral_english_basic_v1/merged_pii_model \
+  --base_model mistralai/Mistral-7B-Instruct-v0.2
+```
+
+Build GGUF f16 + quantization matrix with llama.cpp:
+
+```bash
+bash tools/quantize_matrix.sh
+# outputs in:
+#   outputs/gguf/pii_masking_english_basic_v1/f16/
+#   outputs/gguf/pii_masking_english_basic_v1/quantized/
+#   outputs/gguf/pii_masking_english_basic_v1/manifest.json
+```
+
+`tools/quantize_matrix.sh` now derives its default `MERGED` and `OUTDIR` paths from the canonical experiment contract, so the default repeatable flow is:
+
+```bash
 python tools/merge.py
-
-# 3️⃣ Convert & Quantize
-python llama.cpp/convert_hf_to_gguf.py \
-  outputs/pii_masking_mistral/merged_pii_model \
-  --outfile models/mistral7b-pii-f16.gguf
-
-llama.cpp/build/bin/quantize \
-  models/mistral7b-pii-f16.gguf \
-  models/mistral7b-pii-Q4_K_M.gguf Q4_K_M
+bash tools/quantize_matrix.sh
 ```
 
-### English-only + basic tag profile (recommended for focused deployment)
+## Evaluation and Model Testing
+
+Canonical benchmark on the frozen test split:
+
 ```bash
-# Regenerate dataset from English samples only with reduced tag taxonomy
-PII_LANG=en \
-PII_TAG_PROFILE=basic \
-FORCE_REBUILD_DATA=1 \
-bash src/pii_masking/train/train_full.sh
+python -m pii_masking.eval.benchmark_quant \
+  --hf_dir outputs/pii_masking_mistral_english_basic_v1/merged_pii_model \
+  --gguf_dir outputs/gguf/pii_masking_english_basic_v1/quantized \
+  --glob "*.gguf" \
+  --split test \
+  --samples 500 \
+  --outdir src/pii_masking/eval/eval_runs
 ```
 
-If your Python env only has the `axolotl` meta-package (without `axolotl.cli` modules), point to a local Axolotl source checkout:
-```bash
-AXOLOTL_SRC=/path/to/axolotl/src \
-PII_LANG=en \
-PII_TAG_PROFILE=basic \
-FORCE_REBUILD_DATA=1 \
-bash src/pii_masking/train/train_full.sh
+Evaluation notes:
+
+- canonical evaluation reads the frozen contract split artifacts instead of re-splitting the raw Hugging Face dataset
+- `--samples 500` is a faster benchmark run
+- `--samples 0` evaluates the full frozen test split
+- leaderboard and summary outputs in `src/pii_masking/eval/eval_runs` include contract metadata so results stay tied to the dataset definition
+
+## Product Roadmap
+
+1. Evaluation improvements
+   - Expand test suites by domain and edge-case categories
+   - Add automated regression scoring per label class
+2. Model testing
+   - Build benchmark packs for precision/recall and hallucination checks
+   - Track model versions with reproducible test reports
+3. Backend and frontend improvements
+   - Throughput optimization and concurrency profiling
+   - UX iteration for side-by-side output review workflows
+4. Cloud deployment
+   - Deploy managed online endpoints on AWS
+   - Add production-grade observability and autoscaling
+5. Bedrock comparison
+   - Run side-by-side online A/B evaluation with AWS Bedrock models
+   - Publish comparative latency, quality, and cost reports
+
+## Repository Layout
+
+```text
+config/                     # training/runtime config and experiment contract
+data/contracts/             # generated frozen dataset artifacts 
+services/
+  backend/                  # FastAPI CPU/GPU APIs
+  frontend/                 # Gradio app
+src/pii_masking/
+  train/                    # training pipeline
+  infer/                    # inference wrappers
+  eval/                     # evaluation scripts
+  utils/                    # post-processing, metrics, prompt helpers
+tools/                      # merge/quantization helpers
 ```
 
-`PII_TAG_PROFILE=basic` collapses labels into a simpler set:
-- `[NAME]`
-- `[ADDRESS]`
-- `[CARDNUMBER]`
-- `[PHONENUMBER]`
-- selected retained tags (`[EMAIL]`, `[DATE]`, `[URL]`, `[USERNAME]`, `[IP*]`, `[ACCOUNTNUMBER]`)
-- `[OTHERPII]` fallback for the rest
+## Credits
 
----
+- Dataset: `ai4privacy/pii-masking-200k`
+- Base model: `mistralai/Mistral-7B-Instruct-v0.2`
+- Stack: Axolotl, Transformers, FastAPI, Gradio, llama.cpp, Docker
 
-## 📈 Performance Summary
-| Mode | Engine | Model Type | Speed | Accuracy | Use Case |
-|------|---------|-------------|--------|-----------|-----------|
-| 🧠 **GPU** | **Transformers** | FP16 Merged | ⚡ Fast | ✅ Highest | Local / Production |
-| ⚙️ **CPU** | **llama.cpp** | GGUF F16 / Q4_K_M | 🐢 Slower | ⚠️ Slight drop | Portable / HF Demo |
+## License
 
----
-
-## 🛠 Post-Processing Highlights
-
-- Canonicalizes tag variants (e.g., [Firstname] → [FIRSTNAME])
-- Collapses multi-part addresses
-- Detects and normalizes credit-card patterns → [MASKEDNUMBER]
-- Reduces tag set for lightweight quantized inference
-
----
-
-## 🧭 Roadmap
-
-- [x] LoRA fine-tuning (Axolotl)
-- [x] Model merge & quantization
-- [x] FastAPI + Gradio stack
-- [x] Dual CPU/GPU Docker deployment
-- [x] Hugging Face Space demo (quantized CPU)
-
----
-
-## 🙏 Credits
-
-Dataset: ai4privacy/pii-masking-200k
-Base Model: mistralai/Mistral-7B-Instruct-v0.2
-Frameworks: Axolotl · Transformers · FastAPI · Gradio · llama.cpp · Docker
-
----
-
-## 📜 License
-
-MIT License © 2025 Mahdi Falaki
+MIT
